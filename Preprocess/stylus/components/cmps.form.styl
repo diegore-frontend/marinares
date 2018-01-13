@@ -1,0 +1,183 @@
+.ap
+	&-field
+		// Label
+		&-label
+			color: $base
+			display: block
+			margin-bottom: .6em
+			font-weight: 900
+			
+			.checker
+				background: linear-gradient(left, #C46729, #DA932F 90%);
+				border-radius: 10em
+				border: 2px solid #DCDEEB
+				display: inline-block
+			
+			&-link
+				color: #FFF
+				position: relative
+				
+				&:before
+					background-color: $orange
+					bottom: 0;
+					content: "";
+					height: 1px;
+					position: absolute;
+					width: 100%;
+					
+			&-txt
+				color: #FFF
+				display inline-block
+				padding-left: 0.6em
+				vertical-align middle
+				width: calc(100% - 34px)
+				
+	// Inputs
+	&-form
+		&-txt
+			background-color: #EDE7DC  
+			border: 2px solid #EDE7DC  
+			color: $base
+			font-weight: 900
+			font-size: 1.2em
+			padding: .6em
+			width: 100%
+			-webkit-appearance: none
+			text-align: center
+			
+			&::placeholder
+				opacity: 1
+				color: #222
+			
+			&--error
+				border-color: $red
+	
+	&-label
+		display: block;
+		max-width: 20em;
+		margin: auto;
+		    		
+		.checker
+			display: inline-block
+			vertical-align: top
+			font-size: 1.4em
+
+
+		&-txt
+			display: inline-block
+			text-align: left
+			width: calc(100% - 2em)
+			font-size: 1.2em
+			
+			+above(760px)
+				margin-left: .2em
+
+		&-txt, &-link
+			color: $base
+		
+		&-link
+			text-decoration: underline
+		
+				
+// Uniforms
+div.checker
+	display: inline-block
+	zoom: 1
+	vertical-align: middle
+	&:focus
+		outline: 0
+		
+div.checker, div.checker *
+	margin: 0
+	padding: 0
+
+
+div.checker input,
+input[type="search"],
+input[type="search"]:active
+	-moz-appearance: none
+	-webkit-appearance: none
+
+// Checker 
+div.checker
+	margin-right: 5px
+	position: relative
+	
+	span
+		display: inline-block
+		zoom: 1
+		text-align: center
+		position: relative
+		
+		&:before
+			font-family: 'trivia-icons' !important;
+			content: "\e901"
+			color: $blue
+			
+		
+		&.checked
+			position: relative
+		
+			&:before
+				content: "\e902"
+			
+	input
+		border: medium none
+		display: inline-block
+		left: 0
+		opacity: 0
+		position: absolute
+		top: 0
+		
+div.checker, div.checker span, div.checker input
+	width: 22px
+	height: 22px
+
+// Validation
+.ap
+	&-field
+		&--error
+			.ap
+				&-form-txt
+					border-color: $red
+					
+				&-field-val
+					display: block
+			
+			&-msg
+				background-color: $red
+				color: #fff;
+				left: -1.5em;
+				margin-top: 1em;
+				padding: 1em;
+				position: relative;
+				width: 100%
+				
+				&:before
+					background-color: $red;
+					content: '';
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 140%;
+					z-index: -1;		
+				
+				+above(1020px)
+					width: 420px
+					
+					&:before
+						display: none
+							
+		&--validate
+			.ap
+				&-form-txt
+					border-color: #D2A65B
+		
+		&-val
+			color: $red
+			display: none
+			font-size: 0.88em;
+			margin: 1em 0;
+			
+		

@@ -1,0 +1,133 @@
+.ap-lo
+	position: absolute
+	
+	&--ball
+		animation: 1.8s fadeIn both infinite
+		background-color: red
+		width: 1.8em
+		height: 1.8em
+		display: block
+		border-radius: 10em
+		right: 50%
+		bottom: 50%
+		opacity: 0
+		
+		&:first-child
+			animation-delay: .2s
+			margin: 0 -5.1em -3.4em 0
+		
+		&:nth-child(2)
+			animation-delay: .4s
+			margin: 0 -5.4em -5.8em 0
+		
+		&:nth-child(3)
+			animation-delay: .6s
+			margin: 0 -2.9em -5.5em 0
+
+	&--sheet
+		animation: 1.8s sheetDown .9s both infinite
+		background: url('//dsoh5jykc8zh3.cloudfront.net/img/genericos/FK29-OK32-HN49-RD49/img-muerdago.png')
+		background-size: contain;
+		bottom: .2em
+		display: block;
+		font-size: 60px;
+		height: 1em;
+		opacity: 0
+		width: 2em;
+		
+		&:nth-child(5)
+			animation: 1.6s sheet 1.2s both infinite
+			bottom: auto;
+			margin-right: -1.5em;
+			margin-top: -0.8em;
+			right: 50%;
+			top: 50%;
+
+.ap-360
+	font-size: 2em
+	
+	&-circle
+		transform: rotate3d(1,-1, 1, 60deg)
+		display: block
+		height: 1.5em
+		width: 3em
+		
+		&:before
+			background-color: red
+			content: ''
+			position: absolute
+			height: 100%
+			width: calc(100% - 10%)
+			left: 0
+			top: 0
+
+.ap-spinn
+	bottom: 1.2em;
+	color: #fff;
+	font-size: 1.5em;
+	height: 1.8em;
+	margin: auto;
+	position: fixed;
+	right: 0.6em;
+	width: 3em;
+	z-index: 20
+
+	&-skewed 
+		transform: rotate3d(12,-2,3,70deg);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 1;
+		margin-left: -0.9em;
+	    
+	&-txt
+		left: 50%;
+		margin-left: -0.95em;
+		padding: 0;
+		position: absolute;
+		z-index: 2;
+		top: 0.5em;
+		
+		&:before
+			background: -webkit-linear-gradient($yellowT, $yellowD)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+			color: $yellowT
+			content: '360º'
+			position: absolute
+			z-index: 2
+		
+		&:after
+			color: #222;
+			content: '360º';
+			position: absolute;
+			text-shadow: 1px 1px 0em rgba(0,0,0,.6)
+			z-index: 1;
+	
+.ap-spinner,.ap-spinner:after
+	width: 2.8em;
+	height: 2.8em;
+	position: fixed;
+	border-radius: 10em;
+	z-index: 2;
+	left: 0
+	top: 0
+
+.ap-spinner 
+	background-color: transparent;
+	border-top: 0.3em solid rgba(255,255,255,0.8);
+	border-right: 0.3em solid rgba(255,255,255,0.8);
+	border-bottom: 0.3em solid rgba(255,255,255,0.8);
+	border-left: 0.3em solid rgba(255,255,255,.1);
+	transform: translateZ(0);
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-duration: .8s;
+	animation-name: spinner-loading
+
+
+.ap-ie
+	.ap-spinn		
+		&-skewed
+			display: none
+					

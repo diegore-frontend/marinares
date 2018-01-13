@@ -1,0 +1,212 @@
+// Buttons
+.ap
+	&-buttons
+		background-color: black
+		padding: 1em
+		
+		a
+			display: inline-block
+			margin-bottom: 1em
+		
+		.ap-tt
+			margin-bottom: 1em
+
+	&-btn
+		font-weight: 700
+		letter-spacing: .1em
+		
+		// Home
+		&--hm
+			background-color: rgba($gold, 0)
+			border: 0.24em solid rgba($gold, .6)
+			text-align: center
+			padding: 1em
+			border-radius: 4em
+			color: $gold
+			position: relative
+			transition: .20s all
+			
+			&:before, &:after
+				background-color: $gold
+				content: ''
+				border-radius: 1em
+				position: absolute
+				height: .24em
+				transition: .20s all
+				width: 40%
+			
+			&:before
+				top: -.24em
+				right: 2em
+			
+			&:after
+				bottom: -.24em
+				left: 2em
+			
+			&:focus, &:active
+				background-color: rgba($gold, .6)
+				border-color: transparent
+				color: #FFF
+				
+			+above(1024px)
+				&:hover
+					background-color: rgba($gold, .6)
+					border-color: transparent
+					color: #FFF
+					transition-delay: .2s
+					
+					&:before
+						right: 54%
+					
+					&:after
+						left: 54%					
+		
+		// Common
+		&--cm
+			background: linear-gradient(left, #C1943D, #DCC181);
+			border-radius: 10em
+			color: #FFF
+			letter-spacing: .24em
+			max-width: 18em
+			padding: 0.8em
+			text-align: center
+		
+		&--sbm
+			background: linear-gradient(left, #C1943D, #DCC181);
+			border: 0 none
+			border-radius: 10em
+			color: #FFF
+			letter-spacing: .24em
+			max-width: 16em
+			padding: .6em 1em
+			width: 100%
+
+		// Actions
+		&--ac
+			border-radius: 4em
+			border: .2em solid $shineGold
+			color: #FFF
+			padding: .6em 1em
+			transition: .20s all
+			
+			+above(1024px)
+				&:hover
+					background: linear-gradient(left, #C1943D, #DCC181);
+			
+		&-close
+			background: linear-gradient(left, #C1943D, #DCC181);
+			border-radius: .4em .4em 0 0
+			color: #FFF;
+			display: block;
+			font-weight: 700
+			letter-spacing: .2em
+			padding: 1em;
+			text-align: center;
+
+		// Brands
+		&--facebook
+			background-color: $facebook
+			margin-bottom: .6em
+			
+			+above(1040px)
+				&:hover
+					background-color: $fbhover
+		
+		&--twitter
+			background-color: $twitter
+			
+			+above(1040px)
+				&:hover
+					background-color: $twhover
+					
+	
+	&-link
+		color: $base
+	
+// Hamburguer Menu
+.ap-nav-icon
+	display: block
+	height: 2.5em
+	font-size: 1.2em
+	position: relative;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	width: 2.6em
+	
+	span
+		background: #d3531a;
+		border-radius: 10em
+		display: block;
+		height: .3em;
+		left: 0;
+		opacity: 1;
+		position: absolute;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+		width: 100%;
+		
+		&:before
+			content: ''
+			border-radius: 1em
+			position: absolute
+			height: 100%
+		
+		&:nth-child(1)
+			background-color: rgba(#DCC181, .2)
+			top: 0
+			
+			&:before
+				background-color: rgba(#DCC181, .6)
+				box-shadow: 0 0 .6em rgba(0, 0, 0, .75)
+				width: 60%
+				right: 0
+				
+		
+		&:nth-child(2), &:nth-child(3)
+			background-color: #C0C0C0
+			top: 1em
+		
+		&:nth-child(3)
+			&:before
+				background-color: rgba(#DCC181, .6)
+				box-shadow: 0 0 .6em rgba(0, 0, 0, .75)
+				width: 60%
+				right: 50%
+				opacity: 0
+				transition: .30s all
+				transition-delay: .3s
+		
+		&:nth-child(4)
+			background-color: rgba(#DCC181, .2)
+			top: 2em
+			
+			&:before
+				background-color: rgba(#DCC181, .6)
+				box-shadow: 0 0 .6em rgba(0, 0, 0, .75)
+				width: 60%
+				left: 0
+	
+	&--active
+		span
+			&:nth-child(1)
+				top: 1em
+				width: 0%;
+				left: 50%;
+			
+			&:nth-child(2)
+				transform: rotate(45deg);
+			
+			&:nth-child(3)
+				background-color: #ABA699
+				transform: rotate(-45deg);
+				
+				&:before
+					opacity: 1
+					right: 0
+			
+			&:nth-child(4)
+				top: 1em
+				width: 0%;
+				left: 50%;
+		
+

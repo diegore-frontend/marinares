@@ -1,0 +1,64 @@
+// Premios Cinépolis 2018
+// Gulpfile included :: Gulp render console: Gulp
+
+@import 'nib'
+@import 'components/cmps.colors'
+
+html, body
+	height: 100%
+
+body
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	color: $base
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px
+	font-weight: 400
+	overflow-x: hidden
+	position: relative
+	
+	+above(760px)
+		font-size: 14px
+	
+	+above(1040px)
+		font-size: 16px
+		
+// Tools
+@import 'components/cmps.normalizr'
+@import 'components/cmps.grid'
+@import 'components/cmps.animation'
+
+// Components
+@import 'components/cmps.fonts'
+@import 'components/cmps.text-formating'
+@import 'components/cmps.buttons'
+// @import 'components/cmps.scrollbar'
+// @import 'components/cmps.form'
+// @import 'components/cmps.uniform'
+
+// Vendors
+
+// // Layout
+@import 'layout/lay.header'
+// @import 'layout/lay.footer'
+@import 'layout/lay.modal'
+// @import 'layout/lay.loader'
+@import 'layout/lay.layout'
+// @import 'layout/lay.start-animation'
+
+// // Pages
+// @import 'pages/page.home'
+// @import 'pages/page.games'
+// @import 'pages/page.thanks'
+
+// // Games
+// @import 'games/gam.error'
+// @import 'games/gam.puzzle'
+// @import 'games/gam.sequences'
+// @import 'games/gam.sliders'
+// @import 'games/gam.blur-img'
+// @import 'games/gam.trivia-txt'
+// @import 'games/gam.engineerio'
+// @import 'games/gam.tap'
+// @import 'games/gam.ninja'
+// @import 'games/gam.sweetmatch'

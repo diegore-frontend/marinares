@@ -1,0 +1,298 @@
+.ap
+	&-overlay
+		background-color: rgba(0, 0, 0, .75)
+		display: none
+		height: 100%;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 20;
+		
+		&--leaving
+			.ap-overlay-area
+				animation: 1s fadeOutUpBig both !important
+				
+		&-table
+			display: inline-table
+			height: 100%
+			width: 100%
+			
+		&-landscape
+			margin-top: 9em
+			margin: auto;
+			max-width: 310px;
+			padding: .5em;
+			position: relative;
+			
+			+above(768px)
+				max-width: 600px
+				
+		&-load
+			margin: auto;
+			max-width: 310px;
+			padding: .5em;
+			position: relative;
+			
+			+above(768px)
+				max-width: 600px
+			
+		&-cell
+			display: table-cell
+			vertical-align middle
+		
+		&-area
+			background-color: #FFF
+			border-radius: .4em
+			margin: auto;
+			max-width: 90%
+			// opacity: 0
+			position: relative;
+		
+								
+	&-modal
+		.ap
+			&-tt
+				background: linear-gradient(left, rgba(#313131, .2), #fff);
+				margin-bottom: 0.4em
+				text-align: center
+				letter-spacing: .1em
+				font-weight: 700
+				padding: 1em
+
+				&-third
+					color: $base
+					font-size: 1.1em
+					margin-bottom: .6em
+					text-align center
+			
+			&-btn
+				&-close
+					&:before
+						display: none
+
+					+above(760px)
+						border-radius: 10em;
+						font-size: 1.4em;
+						height: 2.2em;
+						padding: 0.56em 0 0;
+						position: absolute;
+						right: -1.2em;
+						text-indent: .2em;
+						text-shadow: 0em 0em 0.2em rgba(0,0,0,.2)
+						top: -1.2em;
+						width: 2.2em;
+						
+						&:before
+							display: block
+						
+						.ap-txt
+							display: none
+
+				&-cm--ena
+					margin-bottom: .6em
+		
+		.ps-scrollbar-y
+			background-color: $green !important
+		
+		&-terms-data
+			&--mx, &--tm
+				padding-right: 1em
+					
+
+		&--leave
+			text-align: center
+			.ap
+				&-txt
+					color: #FFF
+					padding: 1em 0
+
+				&-nav
+					.ap-btn
+						&:first-child
+							margin-bottom: .6em
+		
+		&--terms
+			.ap-modal-terms-data--tm
+				height: 100%
+				
+				p
+					a
+						color: $base
+						text-decoration: underline
+						font-weight: 700
+			
+			+above(1040px)
+				.ap-overlay-area
+					max-width: 42em
+				
+				.ap-scroll
+					height: 18em !important
+					
+		&--instructions
+			.ap-modal-ovflow
+				ul li
+					counter-increment: item;
+					padding-left: 0.4em;
+					position: relative;
+					
+					&:before
+						content: counter(item) ".- ";
+						font-weight: 700;
+						left: -1em;
+						position: absolute;
+
+		&--mechanics, &--terms
+			.ap-scroll
+				height: 23em;
+				overflow: hidden;
+				position: relative;
+				margin-bottom: 1em;
+				text-align: justify				
+					
+				p
+					padding-bottom: 1em
+			
+			.ap-ovflow
+				overflow: hidden
+				height: 100%
+				position: relative
+			 	
+		&--landscape
+			display: none
+			position: fixed
+			height: 100%
+			width: 100%
+			top: 0
+			z-index: 999	 	
+			p
+				font-size: 1rem
+				
+		&--is-visible
+			display: block
+						
+			.ap-overlay
+				&-table
+					opacity: 1
+					position: relative
+					transition-delay: .4s
+					z-index: 1
+				
+				&-area
+					animation: .4s fadeInDown both
+	
+				
+
+// Modal ID
+.mfp
+	&-bg
+		background: rgba(0, 0, 0, 0.8)
+		opacity: 1 !important
+
+
+	&-iframe
+		&-scaler
+			padding-top: 320px !important
+			
+			&-scroller
+				-webkit-overflow-scrolling: touch;
+				height: 100%;
+				overflow-x: hidden
+				overflow-y: auto
+				position: absolute;
+				top: 0;
+				width: 100%;
+			
+			iframe
+				background: transparent !important
+				box-shadow: none !important
+				
+		&-holder
+			.mfp-close
+				font-size: 2.6em;
+				height: 1em;
+				padding: 0;
+				right: 0;
+				text-align: center;
+				top: -1.12em;
+				width: 1em;
+				    
+			.mfp-content
+				background: transparent;
+				max-height: 320px;
+				max-width: 310px !important;
+
+
+.enter-face
+	margin: auto;
+	width: 100%;
+	max-width: 311px
+	z-index: 12345 !important;
+	
+	p
+		display: none
+
+	
+	.fbn-btn.ga-fa
+		background: #3b5998;
+		color: #fff;
+		display: block;
+		font-family: 'Roboto', sans-serif;
+		padding: 1em;
+		position: relative;
+		font-size: 16px
+		
+		&:before
+			content: "O ingresa con "
+	
+	+above(600px)
+		bottom: 50%;
+		left: 50%;
+		margin-bottom: -210px;
+		margin-left: -155px;
+		position: absolute;
+		width: 320px;			
+	
+	+above(760px)
+		margin-bottom: -210px
+		margin-left: -154px
+		
+.ap-ie
+	.ap-modal
+		&--saturated
+			.ap-overlay
+				&-area
+					&:before
+						+above(760px)
+							font-size: 80px
+							margin-top: -342px
+		
+		&--login
+			.ap-overlay
+				&-area
+					&:before
+						+above(760px)
+							font-size: 80px
+							margin-top: -302px
+			
+		&--no-game
+			.ap-overlay
+				&-area
+					&:before
+						+above(760px)
+							font-size: 80px
+							margin-top: -332px
+	
+		&--benefit
+			.ap-overlay-area
+				&:before
+					+above(760px)
+						font-size: 80px
+						margin-top: -284px
+
+
+@media only screen and (max-height: 412px) and (min-width: 480px) and (orientation:landscape)
+	.ap
+		&-modal
+			&--landscape
+				display: block
+
