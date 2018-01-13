@@ -44,7 +44,7 @@ var gulp          = require('gulp');
 
 // Default Task with Stylus
 gulp.task('default', function() {
-	gulp.start('nunjucks','scripts','stylus','skin-id','watch', 'webserver');
+	gulp.start('nunjucks','scripts','stylus','watch', 'webserver');
 });
 
 function fileHeader(title) {

@@ -1,0 +1,8 @@
+/*!
+#Marinares - 1.0.0
+Copyright ©  2018 - Diego Gutierrez
+Desarrollado por Esteban Serafin
+https://www.facebook.com/diego.salgado.9022
+*/
+@import 'C:\Users\Diego\Desktop\freelance-2018\#mariares\sitio-web\marinares\node_modules\stylus\lib\functions';
+::selection{background:$green;color:#fff;text-shadow:none}::-moz-selection{background:$green;color:#fff;text-shadow:none}html,body{height:100%}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;color:#434343;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;overflow-x:hidden;position:relative;}@media only screen and (min-width:760px){body{font-size:14px}}@media only screen and (min-width:1040px){body{font-size:16px}}
