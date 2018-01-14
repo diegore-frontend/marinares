@@ -1,17 +1,30 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model ContactViewModel
+<div ng-controller="ContactController as vm">
+    <form name="contactForm" novalidate>
+        <h5>Confirmar Asistencia</h5>
+        <div>
+            @Html.TextBoxFor(x => x.Name, new { placeholder = "Nombre", ng_model="vm.contact.Name" })
+            @Html.ValidationMessageFor(x=>x.Name)
+        </div>
+        <div>
+            @Html.TextBoxFor(x => x.FirstName, new { placeholder = "Apellidos", ng_model = "vm.contact.FirstName" })
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div>
+            @Html.TextBoxFor(x => x.Email, new { placeholder = "Email", ng_model = "vm.contact.Email" })
+            @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+        <div>
+            @Html.TextBoxFor(x => x.Phone, new { placeholder = "Teléfono", ng_model = "vm.contact.Phone" })
+            @Html.ValidationMessageFor(x => x.Phone)
+        </div>
+        <button type="submit" ng-click="vm.sendMessage(vm.contact)">
+            Enviar mensaje
+        </button>
+    </form>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/marinares/validations", "~/marinares/ng-contact")
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>

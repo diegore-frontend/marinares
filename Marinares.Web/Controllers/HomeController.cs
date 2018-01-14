@@ -1,30 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Marinares.Data.ViewModel;
 using System.Web.Mvc;
 
 namespace Marinares.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : JsonController
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        [Route("confirmar")]
+        public ActionResult Contact()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost, Route("SendMessage")]
+        public JsonResult SendMessage(ContactViewModel model)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return InvalidData();
+                }
+                return Ok("");
+            }
+            catch (System.Exception exc)
+            {
+                return GenericError(exc);
+            }
         }
     }
 }
