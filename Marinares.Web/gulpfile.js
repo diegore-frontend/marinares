@@ -44,7 +44,7 @@ var gulp          = require('gulp');
 
 // Default Task with Stylus
 gulp.task('default', function() {
-	gulp.start('nunjucks','scripts','stylus','watch', 'webserver');
+	gulp.start('nunjucks','watch', 'webserver');
 });
 
 function fileHeader(title) {
@@ -78,34 +78,18 @@ gulp.task('nunjucks', function() {
 	.pipe(gulp.dest(PATHS.output));
 });
 
-// Stylesheets Compiling actions
-gulp.task('stylus', function () {
-	return gulp.src(PATHS.stylePath + filename +'.styl')
-	.pipe(plumber())
-	.pipe(stylus({
-		use: [
-			nib(),
-			rupture()
-		],
-		compress: true
-	}))
-	.pipe(header(fileHeader(headerName)))
-	.pipe(gulp.dest(PATHS.styleOut))
-	.pipe(notify({ message: 'CSS compiled! 🍻🍻' }));
-});
-
 // Scripts Concatenating
-gulp.task('scripts', function() {
-	return gulp.src(['Preprocess/scripts/*.js'])
-	.pipe(plumber())
-	.pipe(concat('jquery.vendors.js'))
-	.pipe(notify({ message: 'Javascript concatenated! 🍻🍻' }))
-	.pipe(header(fileHeader('Trivia Kingsman - Vendors')))
-	.pipe(uglify({
-		preserveComments: 'some'
-	}))
-	.pipe(gulp.dest('Scripts/'));
-});
+// gulp.task('scripts', function() {
+// 	return gulp.src(['Preprocess/scripts/*.js'])
+// 	.pipe(plumber())
+// 	.pipe(concat('jquery.vendors.js'))
+// 	.pipe(notify({ message: 'Javascript concatenated! 🍻🍻' }))
+// 	.pipe(header(fileHeader(headerName + ' - Vendors')))
+// 	.pipe(uglify({
+// 		preserveComments: 'some'
+// 	}))
+// 	.pipe(gulp.dest('Scripts/'));
+// });
 
 // Server Connection
 gulp.task('webserver', function() {
@@ -123,8 +107,6 @@ gulp.task('webserver', function() {
 
 // Watching Files Stylus
 gulp.task('watch', function() {
-	// Stylus
-	gulp.watch('Preprocess/stylus/**/*.styl', ['stylus']);
 	// Scripts
 	gulp.watch('Preprocess/js/**/*.js', ['scripts']);
 
