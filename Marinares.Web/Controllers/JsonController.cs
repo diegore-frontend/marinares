@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
 using Marinares.Data;
+using Marinares.Data.Enums;
 using Resources;
-using Marinarees.Data.Enums;
+using Marinares.Data.Shared;
 
 namespace Marinares.Web.Controllers
 {
@@ -40,7 +41,7 @@ namespace Marinares.Web.Controllers
 
         protected JsonResult Error<TContent>(TContent content, Exception exception)
         {
-            return Create(new Response<string, TContent>(StatusResponse.danger.ToString(), content));
+            return Create(new Response<string, TContent>(StatusResponse.error.ToString(), content));
         }
 
         protected JsonResult GenericError(Exception exception)

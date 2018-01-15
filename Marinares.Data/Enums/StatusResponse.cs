@@ -1,10 +1,10 @@
-﻿namespace Marinarees.Data.Enums
+﻿namespace Marinares.Data.Enums
 {
     public enum StatusResponse
     {
         success,
         info,
         warning,
-        danger
+        error
     }
 }

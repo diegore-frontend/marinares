@@ -8,7 +8,7 @@ namespace Marinares.Web
         {
             bundles.Add(new ScriptBundle("~/marinares/frameworks").Include(
                 "~/Scripts/angular.min.js",
-                "~/Scripts/jquery-3.2.1.min.js"));
+				"~/Scripts/jquery-3.1.1.min.js"));
 
             bundles.Add(new ScriptBundle("~/marinares/validations").Include(
                 "~/Scripts/jquery.validate.min.js",

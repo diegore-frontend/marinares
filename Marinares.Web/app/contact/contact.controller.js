@@ -1,24 +1,27 @@
 ﻿(function () {
-    'use strict';
+	'use strict';
 
-    angular
+	angular
         .module('app.marinares')
         .controller('ContactController', ContactController);
 
-    ContactController.$inject = ['ContactService'];
-    function ContactController(ContactService) {
-        var vm = this;
+	ContactController.$inject = ['ContactService'];
+	function ContactController(ContactService) {
+		var vm = this;
 
-        vm.sendMessage = sendMessage;
+		vm.sendMessage = sendMessage;
 
-        function sendMessage(contact) {
-            if ($('form').valid()) {
-                ContactService.sendMessage({ model: contact })
+		function sendMessage(contact) {
+			if ($('form').valid()) {
+				ContactService.sendMessage({ model: contact })
                 .then(function (response) {
-                    console.log(response);
+                	swal({
+                		type: response.Status,
+                		text: response.Content
+                	});
                 });
-            }
-            return false;
-        }
-    }
+			}
+			return false;
+		}
+	}
 })();

@@ -1,4 +1,4 @@
-﻿namespace Marinares.Data
+﻿namespace Marinares.Data.Shared
 {
     public class Response<TStatus, TContent>
     {
