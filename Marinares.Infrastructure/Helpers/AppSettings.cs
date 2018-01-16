@@ -13,12 +13,13 @@ namespace Marinares.Infrastructure.Helpers
         public static string Display => GetValue<string>("Email.DisplayName");
 
 
-        public static string PayPalUserName { get; set; }
-        public static string PayPalPassword { get; set; }
-        public static string PayPalSignature { get; set; }
-        public static string PayPalUrl { get; set; }
-        public static string PayPalCallback { get; set; }
-
+        public static string PayPalUserName => GetValue<string>(string.Concat(PayPalType, ".PayPal.UserName"));
+        public static string PayPalPassword => GetValue<string>(string.Concat(PayPalType, ".PayPal.Password"));
+        public static string PayPalSignature => GetValue<string>(string.Concat(PayPalType, ".PayPal.Signature"));
+        public static string PayPalUrl => GetValue<string>(string.Concat(PayPalType, ".PayPal.Url"));
+        public static string PayPalCallbackOk => GetValue<string>("PayPal.Callback.Ok");
+        public static string PayPalCallbackFail => GetValue<string>("PayPal.Callback.Fail");
+        public static string PayPalType => GetValue<string>("PayPal.Type");
 
         private static TValue GetValue<TValue>(string appSettingsKey)
         {
