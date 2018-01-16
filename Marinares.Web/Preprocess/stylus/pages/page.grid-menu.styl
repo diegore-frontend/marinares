@@ -1,0 +1,73 @@
+.ap
+	&-gm
+		&-item
+			border: .4em solid #FFF
+			box-shadow: 0px 0px 4px rgba(0, 0, 0, .75)
+			position: relative
+
+			img
+				transition: .10s all
+				transition-timing-function: ease-in;
+				width: 100%
+			
+			.ap-tt-gm
+				font-family: 'Great Vibes', cursive;
+				
+				
+				&-tp
+					font-family: 'Special Elite', cursive;
+					display: block
+					
+					&:before, &:after
+						content: '-'
+		
+		&-link
+			display: block
+			overflow: hidden
+			color: #FFF
+			
+			&:hover
+				img
+					transform: scale(1.2)
+		
+		&--tt
+			background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75));
+			font-size: 1.6em
+			height: 100%;
+			padding: 1em;
+			position: absolute;
+			width: 100%;
+			left: 0
+			top: 0
+			z-index: 1
+			
+			.ap-cell
+				vertical-align: bottom
+		
+		&-long
+			width: 65.6%
+			margin-top: 2%
+		
+		&-small
+			margin-top: 2%
+		
+		&--itinerario
+			width: 37.2%
+		
+		&--dresscode
+			width: 60.1%
+	
+	&-grid-menu
+		+above(1000px)
+			.ap-area
+				max-width: 85%
+				margin: auto
+				width: 100%
+		
+		+below(680px)
+			.col4, .col8, .col5, .col6
+				width: 100%
+				margin-left: 0
+							
+			.ap-gm-long, .ap-gm-small
+				margin: 0

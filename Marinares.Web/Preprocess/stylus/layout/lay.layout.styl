@@ -1,7 +1,7 @@
 .ap
 	&-main
 		height: 100%
-
+		
 	&-area
 		padding: 1em
 		position: relative
@@ -14,8 +14,6 @@
 	&-lay
 		display inline-table
 		width: 100%
-		height: 100%
-		padding-top: 12em
 	
 	&-cole
 		margin-bottom: 1em
@@ -23,6 +21,12 @@
 		padding-bottom: 1em
 
 	// Imagesheet
+	&-inicio, &-class
+		background: url('../img/img-texture-bg.jpg') no-repeat center center
+		
+		+above(1200px)
+			background-size: cover
+		
 	&-img
 		&-sp
 			background: url('../img/img-site-spritesheet.png')
@@ -31,52 +35,52 @@
 			// Flags
 			&--flag
 				&-left
-					width: 43.2em;
-					height: 15em;
-					background-position: 0 0;
-					background-size: 46.6em;
+					width: 43.2em
+					height: 15em
+					background-position: 0 0
+					background-size: 46.6em
 				
 				&-right
-					background-position: 0 -15em;
-					width: 40em;
-					height: 15em;
+					background-position: 0 -15em
+					width: 40em
+					height: 15em
 				
 			&--rings
-				background-position: 0 -31em;
-				width: 19em;
-				height: 11.2em;
+				background-position: 0 -31em
+				width: 19em
+				height: 11.2em
 			
 			&--ribbon
-				background-position: 0 -49em;
-				width: 46.5em;
-				height: 33em;
+				background-position: 0 -49em
+				width: 46.5em
+				height: 33em
 
 				&-menu
-					background-position: -6.7em 14em;
-					width: 34em;
-					height: 12em;
+					background-position: -6.7em 14em
+					width: 34em
+					height: 12em
 				
 				&-flowers
-					background-position: -4.2em -85.5em;
-					width: 38.2em;
-					height: 28.4em;
+					background-position: -4.2em -85.5em
+					width: 38.2em
+					height: 28.4em
 				
 			&--weed
-				background-position: 0 -115.8em;
-				width: 46.5em;
-				height: 16.6em;
+				background-position: 0 -115.8em
+				width: 46.5em
+				height: 16.6em
 			
 			&--marin
-				background-position: 0 -136.4em;
-				width: 22em;
-				height: 33.2em;
+				background-position: 0 -136.4em
+				width: 22em
+				height: 33.2em
 			
 			&--ares
-				background-position: -28.1em -136.4em;
-				width: 19em;
-				height: 34em;
+				background-position: -28.1em -136.4em
+				width: 19em
+				height: 34em
 			
 			&--couple-back
-				background-position: 0 -170em;
-				width: 46em;
-				height: 47em;
+				background-position: 0 -170em
+				width: 46em
+				height: 47em

@@ -12,7 +12,27 @@
 		&-navigation
 			position: relative
 			z-index: 2
+		
+		&--ribbon
+			+above(760px)
+				.ap-brand
+					font-size: 2.3em;
+					height: 3em;
+					transition: .20s all
+					transition-timing-function: ease-in		
+
+					&-link
+						background-position: 0 -49em
+						width: 46.5em
+						height: 33em
+		
+		&--slim
+			+above(760px)
+				.ap-brand
+					font-size: 1.4em;
+					height: 4.4em;		
 			
+
 	
 	&-brand
 		display: block;
@@ -22,7 +42,6 @@
 		padding: .8em 0 0;
 		height: 4.4em;
 
-		
 		.ap-txt
 			font-size: 0
 			width: 0
@@ -32,7 +51,7 @@
 			display: block
 			margin: auto
 			font-size: .3em
-	
+				
 	// Instagram
 	// &-instagram
 	// 	width: 100%
@@ -47,6 +66,10 @@
 		left: -100%
 		z-index: 1
 		transition: .30s linear
+		transition-timing-function: ease-in;
+		
+		+above(1000px)
+			width: 24em
 		
 		&--is-visible
 			left: 0
@@ -78,6 +101,9 @@
 			border-bottom: 1px solid rgba($base,0.2);
 			padding-left: 1em;
 			
+			+above(1000px)
+				height: initial
+			
 			&--active
 				border-color: $red
 				font-weight: bolder
@@ -89,6 +115,9 @@
 			color: $base
 			padding: 7.8% 0
 			display block
+			
+			+above(1000px)
+				padding: 2.6em 0
 		
 		// &-ac
 		// 	width: 100%

@@ -1,35 +1,140 @@
-.ap-confirmacion
-	background-color: #fff7eb
-	
-	.ap-tt
-		text-align center
-		margin-bottom: .7em
-		
-		&:after, &:before
-			background: url(../img/img-spark.png) no-repeat;
-			content: '';
-			width: 1em;
-			height: 1em;
-			position: absolute;
-			background-size: 1em auto;
+.ap
+	&-confirmacion
+		background-color: #fff7eb
+		position: relative
 		
 		&:before
-			left: 50%;
-			margin-left: -6.7em;
+			background: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			content: ''
+			position: absolute
+			height: 20%
+			top: 0
+			left: 0
+			width: 100%
 		
-		&:after
-			right: 50%
-			margin-right: -6.7em
-	
-	.ap-txt
-		font-family: 'Georgia', serif
-		padding-bottom: 1em
+		.ap-tt
+			text-align center
+			margin-bottom: .7em
+			
+			&:after, &:before
+				background: url('../img/img-spark.png') no-repeat;
+				background-size: 1em auto;
+				content: '';
+				height: 1em;
+				position: absolute;
+				width: 1em;
+			
+			&:before
+				left: 50%;
+				margin-left: -6.7em;
+			
+			&:after
+				right: 50%
+				margin-right: -6.7em
 		
-		&--quoute
+		.ap-txt
 			font-family: 'Georgia', serif
+			padding-bottom: 1em
 		
-.ap
 	&-fig-quote
 		.ap-img-sp
 			font-size: .6em;
-			margin: 0 auto 2em;				
+			margin: 0 auto 2em;	
+		
+		.ap-txt--quote
+			font-family: 'Georgia', serif
+			font-style: italic
+			font-size: .8em
+			width: 80%
+			margin: 1em auto
+	
+	&-conf
+		&-data
+			.ap-tt-sub
+				margin: 1em 0
+				font-weight: bolder
+		
+		// List
+		&-list
+			margin-bottom: 1em
+			
+		&-item
+			color: #c1ab88
+			padding-left: 2em
+			position: relative
+			margin-bottom: 1em
+			
+			&:before
+				background: url('../img/img-spark.png') no-repeat;
+				background-size: 1em auto;
+				content: '';
+				height: 1em;
+				position: absolute;
+				width: 1em;
+				left: 0
+			
+			.ap-txt-geo
+				display: block
+		
+		&-address
+			color: #c1ab88
+			text-align: center
+			font-size: 1.4em
+	
+
+	// Formulario
+	&-field
+		margin-bottom: 1em
+		
+		&-nav
+			.ap-btn
+				float: right
+
+	&-fl
+		&-form
+			width: 100%
+			display: block
+
+		&-label
+			display: block
+			font-family: 'Georgia', serif
+			font-size: 1.2em
+			margin-bottom: .6em
+		
+		&-txt
+			-webkit-appearance: none
+			background-color: transparent
+			border-radius: 0
+			border-style: solid
+			border-width: 0 0 .2em 0
+			display: block
+			padding: 1em
+			transition: .30s all
+			width: 100%
+			
+			&:focus
+				border-color: #4e7d33
+			
+			&-area
+				background-color: rgba(255, 255, 255, .75)
+				border-radius: 0
+				border-style: solid
+				border-width: 0 0 .2em 0
+				min-height: 8em
+				overflow: auto
+				resize: none
+				transition: .30s all
+				width: 100%
+				
+				&:focus
+					border-color: #4e7d33
+	
+
+	// La
+	&-half
+		+below(680px)
+			width: 100%
+		
+		+above(760px)
+			width: 50%
+			padding: 1em

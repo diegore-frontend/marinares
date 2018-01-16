@@ -1,0 +1,51 @@
+.ap
+	&-class
+		height: 100%
+		position: relative
+		
+		&:before
+			background: linear-gradient(top, rgba(#fff7eb, 1), rgba(255, 255, 255, 0));
+			content: ''
+			position: absolute
+			height: 20%
+			top: 0
+			left: 0
+			width: 100%
+			
+		.ap
+			&-area
+				+above(1480px)
+					padding-top: 12em
+					
+				@media screen and (min-width: 760px) and (max-width: 1024px) and (orientation: portrait)
+					padding-top: 12em
+
+			&-img-sp
+				font-size: .5em
+				margin: auto
+				
+				+above(1480px)
+					font-size: 0.8em
+				
+				@media screen and (min-width: 760px) and (max-width: 1024px) and (orientation: portrait)
+					font-size: 1em
+			
+			&-txt--quote
+				text-align: center
+				margin-bottom: 1em
+				font-weight: bold
+	
+	&-uber
+		display inline-block
+		vertical-align middle
+		
+		&-rec
+			max-width: 300px
+			margin: auto
+			
+			.ap-txt--quote
+				display: inline-block;
+				width: calc(100% - 8em);
+				text-align: left;
+				vertical-align: middle
+		

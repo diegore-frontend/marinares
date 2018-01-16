@@ -44,7 +44,7 @@
 				<nav class="ap-nav">
 					<ul id="ap-nav" class="ap-nav-list">
 						<li class="ap-nav-item ap-nav-item--active">
-							<a class="ap-nav-link" href="#section-1">Inicio</a>
+							<a class="ap-nav-link" href="#ap-inicio">Inicio</a>
 						</li>
 						<li class="ap-nav-item">
 							<a class="ap-nav-link" href="#section-1">¿Dónde?</a>
@@ -56,7 +56,7 @@
 							<a class="ap-nav-link" href="#section-3">¿Cómo puedo vestir?</a>
 						</li>
 						<li class="ap-nav-item">
-							<a class="ap-nav-link" href="#section-3">Confirmar asistencia</a>
+							<a class="ap-nav-link" href="#ap-confirmacion">Confirmar asistencia</a>
 						</li>
 						<li class="ap-nav-item">
 							<a class="ap-nav-link" href="#section-3">Mesa de regalos</a>
@@ -84,64 +84,132 @@
 									<div class="ap-img-sp ap-img-sp--ares"></div>
 								</div>
 								<div class="ap-cp-prx ap-img-sp ap-img-sp--ribbon-flowers"></div>
+								<div class="ap-cp-prx ap-cp-flag-left">
+									<div class="ap-img-sp ap-img-sp--flag-left"></div>
+								</div>
+								<div class="ap-cp-prx ap-cp-flag-right">
+									<div class="ap-img-sp ap-img-sp--flag-right"></div>
+								</div>
 							</figure>
 						</div>
 					</div>
 				</seciton>
 				<article class="ap-bienvenida">
 					<h2 class="ap-tt">Bienvenidos</h2>
-					<p class="ap-txt">
-						Aquí la recopilación de todo lo necesario para que nos acompañen en nuestro gran día. Estamos muy contentos de que nos acompañen. Todos juntos complementaremos este gran ritual.
-					</p>
+					<div class="ap-area">
+						<p class="ap-txt">
+							Aquí la recopilación de todo lo necesario para que nos acompañen en nuestro gran día. Estamos muy contentos de que nos acompañen. Todos juntos complementaremos este gran ritual.
+						</p>
+					</div>
 					<a href="#" class="ap-bienvenida-hash ap-txt-link">#marinares</a>
 				</article>
 
 				<!-- Grid Menú -->
-			<seciton id="ap-grid-menu" class="ap-lay ap-grid-menu">
-				<div class="ap-gm-item ap-gm--donde">
-					<a href="#" class="ap-gm-link">
-						<h4 class="ap-tt-gm">
-							Ubicación
-							<small class="ap-tt-gm-tp">¿Dónde?</small>
-						</h4>
-						<img src="/Content/img/img-donde.jpg">
-					</a>
-				</div>
-				<div class="ap-gm-item ap-gm--itinerario">
-					<a href="#" class="ap-gm-link">
-						<h4 class="ap-tt-gm">
-							Itinerario
-							<small class="ap-tt-gm-tp">Es una fiesta de barrio</small>
-						</h4>
-						<img src="/Content/img/img-intinerario.jpg">
-					</a>
-				</div>
-				<div class="ap-gm-item ap-gm--hotel">
-					<a href="#" class="ap-gm-link">
-						<h4 class="ap-tt-gm">
-							Hospedaje
-							<small class="ap-tt-gm-tp">¿Dónde me puedo hospedar?</small>
-						</h4>
-						<img src="/Content/img/img-intinerario.jpg">
-					</a>
-				</div>
-				<div class="ap-gm-item ap-gm--dresscode">
-					<a href="#" class="ap-gm-link">
-						<h4 class="ap-tt-gm">
-							Dress Code
-							<small class="ap-tt-gm-tp">¿Cómo puedo vestir?</small>
-						</h4>
-						<img src="/Content/img/img-intinerario.jpg">
-					</a>
-				</div>
-				<div class="ap-gm-item ap-gm--japon">
-					<a href="#" class="ap-gm-link">
-						<h4 class="ap-tt-gm">
-							Mesa de regalos
-							<small class="ap-tt-gm-tp">Experiencia JAPÓN</small>
-						</h4>
-						<img src="/Content/img/img-japon.jpg">
-					</a>
+			<seciton id="ap-grid-menu" class="ap-lay ap-grid-menu cf">
+				<div class="ap-area">
+					<div class="cf">
+						<div class="col4">
+							<div class="ap-gm-item ap-gm--donde">
+								<a href="#" class="ap-gm-link">
+									<div class="ap-gm--tt">
+										<div class="ap-table">
+											<div class="ap-cell">
+												<h4 class="ap-tt-gm">
+													Ubicación
+													<small class="ap-tt-gm-tp">¿Dónde?</small>
+												</h4>
+											</div>
+										</div>
+									</div>
+									<picture>
+										<source srcset="/Content/img/img-donde.jpg" media="(min-width: 700px)">
+										<img srcset="/Content/img/img-donde-mov.jpg" alt="Nominado a" class="ap-nom-img">
+									</picture>
+								</a>
+							</div>
+						</div>
+						<div class="col8">
+							<div class="ap-gm-item ap-gm--itinerario col5">
+								<a href="#" class="ap-gm-link">
+									<div class="ap-gm--tt">
+										<div class="ap-table">
+											<div class="ap-cell">
+												<h4 class="ap-tt-gm">
+													Itinerario
+													<small class="ap-tt-gm-tp">Esto es una fiesta de barrio</small>
+												</h4>
+											</div>
+										</div>
+									</div>
+									<picture>
+										<source srcset="/Content/img/img-cat.jpg" media="(min-width: 700px)">
+										<img srcset="/Content/img/img-cat-mov.jpg" alt="Nominado a" class="ap-nom-img">
+									</picture>
+								</a>
+							</div>
+							<div class="ap-gm-item ap-gm--dresscode col6">
+								<a href="#" class="ap-gm-link">
+									<div class="ap-gm--tt">
+										<div class="ap-table">
+											<div class="ap-cell">
+												<h4 class="ap-tt-gm">
+													Dress Code
+													<small class="ap-tt-gm-tp">¿Cómo puedo vestir?</small>
+												</h4>
+											</div>
+										</div>
+									</div>
+									<picture>
+										<source srcset="/Content/img/img-dress-code.jpg" media="(min-width: 700px)">
+										<img srcset="/Content/img/img-dress-code-mov.jpg" alt="Nominado a" class="ap-nom-img">
+									</picture>
+								</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="cf">
+						<div class="ap-gm-small col4">
+							<div class="ap-gm-item ap-gm--hotel">
+								<a href="#" class="ap-gm-link">
+									<div class="ap-gm--tt">
+										<div class="ap-table">
+											<div class="ap-cell">
+												<h4 class="ap-tt-gm">
+													Hospedaje
+													<small class="ap-tt-gm-tp">¿Dónde me puedo hospedar?</small>
+												</h4>
+											</div>
+										</div>
+									</div>
+									<picture>
+										<source srcset="/Content/img/img-hospedaje.jpg" media="(min-width: 700px)">
+										<img srcset="/Content/img/img-hospedaje-mov.jpg" alt="Nominado a" class="ap-nom-img">
+									</picture>
+								</a>
+							</div>
+						</div>
+						<div class="ap-gm-long col8">
+							<div class="ap-gm-item ap-gm--japon">
+								<a href="#" class="ap-gm-link">
+									<div class="ap-gm--tt">
+										<div class="ap-table">
+											<div class="ap-cell">
+												<h4 class="ap-tt-gm">
+													Mesa de regalos
+													<small class="ap-tt-gm-tp">Experiencia JAPÓN</small>
+												</h4>
+											</div>
+										</div>
+									</div>
+									<picture>
+										<source srcset="/Content/img/img-japon.jpg" media="(min-width: 700px)">
+										<img srcset="/Content/img/img-japon-mov.jpg" alt="Nominado a" class="ap-nom-img">
+									</picture>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</seciton>
 
@@ -169,37 +237,36 @@
 							</div>
 
 							<div class="ap-conf-data">
-								<h3 class="ap-tt">
+								<h3 class="ap-tt-sub">
 									Información:
 								</h3>
 								<div class="ap-conf-info">
 									<ul class="ap-conf-list">
-										<li class="ap-conf-iten">
+										<li class="ap-conf-item">
+											Día:
+											<span class="ap-txt-geo">
+												14 de Abril 2018
+											</span>
+										</li>
+										<li class="ap-conf-item">
 											Ceremonia:
 											<span class="ap-txt-geo">
-												Estudio Calle Medellín no. XX Col. Roma
+												Estudio Calle Medellín no. XX Col. Roma, 5 pm.
 											</span>
 										</li>
-										<li class="ap-conf-iten">
+										<li class="ap-conf-item">
 											Fiesta:
-											<span class="ap-text-geo">
+											<span class="ap-txt-geo">
 												Calle de Puebla no. 137, Col. Roma
-												Delegación Cuauhtémoc, CDMX
+												Delegación Cuauhtémoc, CDMX. 7 pm
 											</span>
 										</li>
-									</ul>
-								</div>
-								<div class="ap-conf-address">
-									<ul class="">
-										<li class="">14 de Abril 2018</li>
-										<li class="">Ceremonia:  5 pm.</li>
-										<li class="">Fiesta:      7 pm.</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<div class="f-left ap-half">
-							<form action="" class="">
+							<form action="" class="ap-fl-form">
 								<div class="ap-field">
 									<label for="" class="ap-fl-label">Nombre:</label>
 									<input type="text" class="ap-fl-txt">
@@ -216,7 +283,7 @@
 									<label for="" class="ap-fl-label">Mensaje:</label>
 									<textarea class="ap-fl-txt-area"></textarea>
 								</div>
-								<nav class="ap-field-nav">
+								<nav class="ap-field-nav cf">
 									<input type="submit" value="Confirmar Asistencia" class="ap-btn ap-btn--sb">
 								</nav>
 							</form>
@@ -231,11 +298,26 @@
 					<div class="ap-cell">
 						<div class="ap-area">
 							<div class="ap-img-sp ap-img-sp--couple-back"></div>
-							p.
+							<p class="ap-txt--quote">
+								Esta es una boda de barrio, no tenemos balet ni estacionamiento.
+							</p>
+							<div class="ap-uber-rec">
+								<p class="ap-txt--quote">
+									Favor de venir caminando, en bici o en uber.
+								</p>
+								<a href="https://www.uber.com/es-MX/ride/" target="_blank" class="ap-uber">
+									<img src="/Content/img/img-icon-uber.png" alt="Uber">
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</seciton>
+
+				<!-- Footer -->
+			<footer class="ap-footer cf">
+				<a href="#" class="ap-bienvenida-hash ap-txt-link">#marinares</a>
+			</footer>
 
 
 			</section>
