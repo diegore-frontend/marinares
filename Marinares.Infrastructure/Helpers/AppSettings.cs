@@ -13,6 +13,13 @@ namespace Marinares.Infrastructure.Helpers
         public static string Display => GetValue<string>("Email.DisplayName");
 
 
+        public static string PayPalUserName { get; set; }
+        public static string PayPalPassword { get; set; }
+        public static string PayPalSignature { get; set; }
+        public static string PayPalUrl { get; set; }
+        public static string PayPalCallback { get; set; }
+
+
         private static TValue GetValue<TValue>(string appSettingsKey)
         {
             try

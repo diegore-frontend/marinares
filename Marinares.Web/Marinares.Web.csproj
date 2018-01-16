@@ -94,6 +94,14 @@
       <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PayPalCoreSDK, Version=1.7.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalCoreSDK.1.7.1\lib\net451\PayPalCoreSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPalMerchantSDK, Version=2.16.250.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalMerchantSDK.2.16.250\lib\net20\PayPalMerchantSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
