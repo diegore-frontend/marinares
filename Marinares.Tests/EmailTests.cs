@@ -1,7 +1,4 @@
 ﻿using NUnit.Framework;
-using System.Net.Mail;
-using Marinares.Data.Shared;
-using Marinares.Infrastructure.Helpers;
 
 namespace Marinares.Tests
 {
@@ -11,7 +8,7 @@ namespace Marinares.Tests
         [Test]
         public void Send()
         {
-            Email.Send(new EmailData());
+            //Email.Send(new EmailData());
         }
     }
 }
