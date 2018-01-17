@@ -79,6 +79,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La compra se realizó correctamente. Recibirás un correo de confirmación..
+        /// </summary>
+        internal static string PaymentSuccess {
+            get {
+                return ResourceManager.GetString("PaymentSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No es posible procesar la compra..
+        /// </summary>
+        internal static string PaymentWrong {
+            get {
+                return ResourceManager.GetString("PaymentWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El menasaje fue enviado correctamente..
         /// </summary>
         internal static string SendMessageSuccess {

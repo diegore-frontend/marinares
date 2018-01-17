@@ -1,0 +1,40 @@
+﻿@model Marinares.Data.Shared.Present
+@{
+    ViewBag.Title = " | " + Model.Title;
+}
+<link rel="stylesheet" href=@Url.Content("~/Content/css/marinares-owl.css")>
+<article class="ap-section ap-japan">
+    <div class="ap-panel--white">
+        <div class="ap-jp-characters">
+            <div class="ap-img-sp ap-img-sp--marin"></div>
+            <div class="ap-img-sp ap-img-sp--ares"></div>
+        </div>
+        <header class="ap-jp-head">
+            <h2 class="ap-tt-sub">- Experiencia Japón -</h2>
+            <p class="ap-txt">Regalen algo a la pareja a través de una cuenta Pay Pal. ¿No tienen? Usen la tarjeta de crédito de su preferencia y saquen una... Es muy rápido.</p>
+        </header>
+        <section class="ap-panel ap-japan-info">
+            <div class="ap-jp-detail cf">
+
+                <figure class="ap-jp-fig">
+                    <img src=@Url.Content("~/Content/img/japan/" + Model.Image) class="ap-jp-img">
+                    <span class="ap-jp-prices">
+                        @Model.Price
+                    </span>
+                </figure>
+                <div class="ap-jp-info">
+                    <h2 class="ap-tt-sub">
+                        @Model.Title
+                    </h2>
+                    <form method="post" action="@Url.Action("Payment","Present")">
+                        <input type="hidden" value="@Model.Key" name="Key" />
+                        <input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+                    </form>
+                    <div class="ap-paypal">
+                        <p class="ap-txt">Esta compra es segura con: <img src=@Url.Content("~/Content/img/img-paypal.png") class="ap-paypal-img"></img> </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</article>

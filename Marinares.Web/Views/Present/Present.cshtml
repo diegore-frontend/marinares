@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Marinares.Data.Shared.Present>
+@{
+    ViewBag.Title = " | Mesa de regalos";
+}
+<link rel="stylesheet" href=@Url.Content("~/Content/css/marinares-owl.css")>
+<article class="ap-section ap-japan">
+    <div class="ap-panel--white">
+        <div class="ap-jp-characters">
+            <div class="ap-img-sp ap-img-sp--marin"></div>
+            <div class="ap-img-sp ap-img-sp--ares"></div>
+        </div>
+        <header class="ap-jp-head">
+            <h2 class="ap-tt-sub">- Experiencia Japón -</h2>
+            <p class="ap-txt">
+                Debido a que llevamos viviendo juntos tres años, ya contamos con todo lo necesario para nuestro hogar. Así que puedes regalarnos una de las siguientes experiencias durante la <strong>“Luna de Miel”</strong> puedes hacerlo de la siguiente manera:
+            </p>
+        </header>
+        <section class="ap-panel ap-japan-info">
+
+            <div class="ap-jp-gallery cf">
+                @foreach (var item in Model)
+                {
+                    <div class="ap-jp-item">
+                        <div class="ap-jp-card">
+                            <figure class="ap-jp-fig">
+                                <img src=@Url.Content("~/Content/img/japan/" + item.Image) class="ap-jp-img">
+                                <span class="ap-jp-prices">
+                                    @item.Price
+                                </span>
+                            </figure>
+                            <div class="ap-jp-info">
+                                <h2 class="ap-tt-sub">
+                                    @item.Title
+                                    @if (!string.IsNullOrEmpty(item.Copy))
+                                    {
+                                        <small class="ap-tt-sub--small">
+                                            @item.Copy
+                                        </small>}
+                                </h2>
+                                <input type="submit" value="Comprar" class="ap-btn ap-btn--sb" onclick="location.href = '@Url.Action("Details","Present",new {key = item.Key })' ">
+                            </div>
+                        </div>
+                    </div>}
+            </div>
+            <span id="bp_mobile" class="bp_checking"></span>
+        </section>
+    </div>
+</article>
+@section scripts
+{
+    @if (TempData["message"] != null)
+    {
+        <script>
+            swal({
+                text: '@Html.Raw(TempData["message"])',
+                type:'@(TempData["type"]!=null && TempData["type"].ToString() == "success" ? "success":"info")',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#912b43',
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            });
+        </script>
+    }
+}

@@ -174,7 +174,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsonController.cs" />
-    <Compile Include="Controllers\PayPalController.cs" />
+    <Compile Include="Controllers\PresentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,7 +205,11 @@
     <Content Include="fonts\ms-icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
+    <Content Include="html\como-vestir.html" />
+    <Content Include="html\experiencia-japon-detalle.html" />
+    <Content Include="html\experiencia-japon.html" />
     <Content Include="html\index.html" />
+    <Content Include="html\intinerario.html" />
     <Content Include="html\page.elements.html" />
     <Content Include="Preprocess\nunjucks-templates\pages\index.html" />
     <Content Include="Preprocess\nunjucks-templates\templates\layout.html" />
@@ -227,7 +231,6 @@
     <Content Include="fonts\ms-icons.ttf" />
     <Content Include="fonts\ms-icons.woff" />
     <Content Include="fonts\selection.json" />
-    <Content Include=".editorconfig" />
     <Content Include="package.json" />
     <Content Include="Preprocess\stylus\components\cmps.animation.styl" />
     <Content Include="Preprocess\stylus\components\cmps.buttons.styl" />
@@ -272,7 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\PayPal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -283,7 +285,12 @@
     <Content Include="Content\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\css\bootstrap.css.map" />
     <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Content\json\presents.json" />
     <None Include="packages.config" />
+    <Content Include="Views\Present\Present.cshtml" />
+    <Content Include="Views\Present\Details.cshtml" />
+    <Content Include="Views\Home\Wear.cshtml" />
+    <Content Include="Views\Home\Itinerario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marinares.Data\Marinares.Data.csproj">

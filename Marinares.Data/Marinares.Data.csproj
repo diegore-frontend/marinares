@@ -45,6 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\EmailData.cs" />
     <Compile Include="Shared\Payment\ItemPayPal.cs" />
+    <Compile Include="Shared\Present.cs" />
     <Compile Include="Shared\Response.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
   </ItemGroup>

@@ -20,8 +20,9 @@ namespace Marinares.Infrastructure.Helpers
         public static string PayPalCallbackOk => GetValue<string>("PayPal.Callback.Ok");
         public static string PayPalCallbackFail => GetValue<string>("PayPal.Callback.Fail");
         public static string PayPalType => GetValue<string>("PayPal.Type");
+	    public static string RoutePresent => GetValue<string>("Route.Present");
 
-        private static TValue GetValue<TValue>(string appSettingsKey)
+	    private static TValue GetValue<TValue>(string appSettingsKey)
         {
             try
             {

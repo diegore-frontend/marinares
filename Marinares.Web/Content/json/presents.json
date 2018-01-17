@@ -1,0 +1,50 @@
+﻿[
+  {
+    "Key": "abono-para-el-japan-rail-pass",
+    "Title": "Abono para el Japan Rail Pass",
+    "Copy": "Se necesitan 2 (Puedes abonar una parte)",
+    "Image": "img-japan-airlines.jpg",
+    "Price": "1 x $8,000",
+    "Total": 8000
+  },
+  {
+    "Key": "noche-de-karaoke-free-time-en-utahiroba",
+    "Title": "Noche de Karaoke Free Time en UtaHiroba",
+    "Copy": "",
+    "Image": "img-utahiro.jpg",
+    "Price": "$2,000 Mxn",
+    "Total": 2000
+  },
+  {
+    "Key": "tour-mario-kart-por-akihabara",
+    "Title": "Tour Mario Kart por Akihabara",
+    "Copy": "",
+    "Image": "img-mario-kart.jpg",
+    "Price": "$3,000",
+    "Total": 3000
+  },
+  {
+    "Key": "cena-y-espectáculo-de-peleas-de-robot",
+    "Title": "Cena y espectáculo de peleas de Robot en:",
+    "Copy": "Robot Restaurant en Kabukicho",
+    "Image": "img-robot-rest.jpg",
+    "Price": "$3,000",
+    "Total": 3000
+  },
+  {
+    "Key": "lunch-casual-en-akihabara",
+    "Title": "Lunch Casual en Akihabara",
+    "Copy": "",
+    "Image": "img-akihabara.jpg",
+    "Price": "$1,300",
+    "Total": 1300
+  },
+  {
+    "Key": "cena-en-alcatraz-e-r-en-shibuya",
+    "Title": "Cena en Alcatraz E. R. en Shibuya",
+    "Copy": "",
+    "Image": "img-japan-airlines.jpg",
+    "Price": "1 x $8,000",
+    "Total": 8000
+  }
+]

@@ -1,85 +1,141 @@
-﻿using System.Web.Mvc;
+﻿using System;
 using System.Collections.Generic;
-using PayPal.PayPalAPIInterfaceService.Model;
-using System;
-using PayPal.PayPalAPIInterfaceService;
 using System.Linq;
+using System.Web.Mvc;
+using Marinares.Data.Shared;
+using Marinares.Infrastructure.Helpers;
+using Resources;
+using PayPal.PayPalAPIInterfaceService.Model;
+using PayPal.PayPalAPIInterfaceService;
 using System.Web;
 using Marinares.Data.Shared.Payment;
-using Marinares.Infrastructure.Helpers;
 
 namespace Marinares.Web.Controllers
 {
-	public class PayPalController : Controller
+	[RoutePrefix("")]
+	public class PresentController : Controller
 	{
+		private readonly IEnumerable<Present> _presents;
 		readonly Dictionary<string, string> _payPalConfiguration = new Dictionary<string, string>();
 
-		public PayPalController()
+		public PresentController()
 		{
 			_payPalConfiguration.Add("account1.apiUsername", AppSettings.PayPalUserName);
 			_payPalConfiguration.Add("account1.apiPassword", AppSettings.PayPalPassword);
 			_payPalConfiguration.Add("account1.apiSignature", AppSettings.PayPalSignature);
 			_payPalConfiguration.Add("mode", AppSettings.PayPalType.ToLower());
+
+			_presents = PresentHelper.Get(
+				string.Concat(AppDomain.CurrentDomain.BaseDirectory, "/content/json/presents.json"));
 		}
 
-		public ActionResult Index()
+		[Route("mesa-de-regalos"), HttpGet]
+		public ActionResult Present()
 		{
-			List<ItemPayPal> items = new List<ItemPayPal>()
-			{
-				new ItemPayPal
-				{
-					Name = "Data",
-					Description = "Data",
-					Price = 100f,
-					Quantity = 1
-				}
-			};
-
-			var token = GenerateOrder(items);
-			HttpCookie payPalTokenCookie = new HttpCookie("_c3P-Pt5", token)
-			{
-				Expires = DateTime.Now.AddMinutes(10)
-			};
-			Response.Cookies.Add(payPalTokenCookie);
-
-			return Redirect(string.Concat(AppSettings.PayPalUrl, token));
+			return View(_presents);
 		}
 
-		public ActionResult CallbackOk()
+		[Route("mesa-de-regalos/{key}"), HttpGet]
+		public ActionResult Details(string key)
 		{
-			var token = Request.QueryString["token"];
-			var payerId = Request.QueryString["PayerID"];
-			string error = string.Empty;
-
-			if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(payerId))
+			var element = _presents.FirstOrDefault(x => x.Key.Equals(key));
+			if (element == null)
 			{
-				if (!string.IsNullOrEmpty(Request.Cookies["_c3P-Pt5"]?.Value))
+				return RedirectToAction("Present", "Present");
+			}
+			return View(element);
+		}
+
+		[HttpPost]
+		public ActionResult Payment(ItemPayPal model)
+		{
+			var element = _presents.FirstOrDefault(x => x.Key.Equals(model.Key));
+			if (element != null)
+			{
+				model.Price = element.Total;
+				if (model.Price > 0)
 				{
-					string idTransaccion = Payment(token, payerId);
-					var paymentInfoType = GetTransactionStatus(idTransaccion, out error);
-					if (paymentInfoType.PaymentStatus.ToString() == "COMPLETED")
+					model.Name = "Data";
+					model.Description = "Data";
+					model.Quantity = 1;
+
+					List<ItemPayPal> items = new List<ItemPayPal> { model };
+					var token = GenerateOrder(items);
+					HttpCookie payPalTokenCookie = new HttpCookie("_c3P-Pt5", token)
 					{
-						decimal montoDec;
-
-						if (decimal.TryParse(paymentInfoType.GrossAmount.value, out montoDec))
-						{
-
-						}
-					}
-					else
-					{
-
-					}
+						Expires = DateTime.Now.AddMinutes(10)
+					};
+					Response.Cookies.Add(payPalTokenCookie);
+					return Redirect(string.Concat(AppSettings.PayPalUrl, token));
 				}
 
 			}
-			return View();
+			TempData["message"] = Messages.PaymentWrong;
+			return RedirectToAction("Present", "Present");
 		}
 
+		[Route("callback-ok")]
+		public ActionResult CallbackOk()
+		{
+			try
+			{
+				var token = Request.QueryString["token"];
+				var payerId = Request.QueryString["PayerID"];
 
+				if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(payerId))
+				{
+					if (!string.IsNullOrEmpty(Request.Cookies["_c3P-Pt5"]?.Value))
+					{
+						string transactionId = Payment(token, payerId);
+						string error;
+						var paymentInfoType = GetTransactionStatus(transactionId, out error);
+						if (paymentInfoType.PaymentStatus.ToString() == "COMPLETED")
+						{
+							SendConfirmation(transactionId);
+
+							TempData["type"] = "success";
+							TempData["message"] = Messages.PaymentSuccess;
+							return RedirectToAction("Present", "Present");
+						}
+					}
+				}
+			}
+			catch
+			{
+				/**/
+			}
+
+			TempData["message"] = Messages.PaymentWrong;
+			return RedirectToAction("Present", "Present");
+		}
+
+		private void SendConfirmation(string transactionId)
+		{
+			Email.Send(new EmailData()
+			{
+				Subcaject = "Confirmación de pago",
+				Body = "El pago se ha completado correctamente.<br/>Número de transacción:" + transactionId,
+				To = new List<string>()
+				{
+					""
+				},
+				Credentiales = new Credentiales()
+				{
+					UserName = AppSettings.UserName,
+					Password = AppSettings.Password
+				},
+				DisplayName = AppSettings.Display,
+				Host = AppSettings.Host,
+				Port = AppSettings.Port,
+				From = AppSettings.From
+			});
+		}
+
+		[Route("callback-fail")]
 		public ActionResult CallbackFail()
 		{
-			return View();
+			TempData["message"] = Messages.PaymentWrong;
+			return RedirectToAction("Present", "Present");
 		}
 
 		private PaymentInfoType GetTransactionStatus(string transactionId, out string error)
@@ -130,19 +186,15 @@ namespace Marinares.Web.Controllers
 				error = string.Empty;
 				return transactionDetails.PaymentTransactionDetails.PaymentInfo;
 			}
-			else
-			{
-				//Error
-				error = transactionDetails.Errors != null || transactionDetails.Errors.Count > 0
-					? transactionDetails.Errors.FirstOrDefault().LongMessage
-					: "Imposible obtener el status de la transacción de PayPal.";
+			//Error
+			error = transactionDetails.Errors != null || transactionDetails.Errors.Count > 0
+				? transactionDetails.Errors.FirstOrDefault().LongMessage
+				: "Imposible obtener el status de la transacción de PayPal.";
 
-				return null;
-			}
-
+			return null;
 		}
 
-		public string Payment(string token, string payerId)
+		private string Payment(string token, string payerId)
 		{
 
 			// Configuration map containing signature credentials and other required configuration.
@@ -165,7 +217,7 @@ namespace Marinares.Web.Controllers
 			DoExpressCheckoutPaymentRequestDetailsType requestDetails = new DoExpressCheckoutPaymentRequestDetailsType();
 			request.DoExpressCheckoutPaymentRequestDetails = requestDetails;
 
-			requestDetails.ButtonSource = "Cinecash_Ecom";
+			requestDetails.ButtonSource = "marinares";
 
 			requestDetails.PaymentDetails = getECResponse.GetExpressCheckoutDetailsResponseDetails.PaymentDetails;
 			// (Required) The timestamped token value that was returned in the SetExpressCheckout response and passed in the GetExpressCheckoutDetails request.
@@ -205,7 +257,7 @@ namespace Marinares.Web.Controllers
 			return transactionId;
 		}
 
-		public string CancelTransaction(string transactionId)
+		private string CancelTransaction(string transactionId)
 		{
 			// Create request object
 			ManagePendingTransactionStatusRequestType request =
@@ -242,7 +294,7 @@ namespace Marinares.Web.Controllers
 
 		}
 
-		public string GenerateOrder(List<ItemPayPal> items)
+		private string GenerateOrder(List<ItemPayPal> items)
 		{
 			// Create request object
 			SetExpressCheckoutRequestType request = new SetExpressCheckoutRequestType();
@@ -359,4 +411,3 @@ namespace Marinares.Web.Controllers
 		}
 	}
 }
-
