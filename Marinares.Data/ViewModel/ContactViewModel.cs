@@ -7,8 +7,8 @@ namespace Marinares.Data.ViewModel
         [Required(ErrorMessage = "Debes introducir un nombre para continuar.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Debes introducir tus apellidos para continuar.")]
-        public string FirstName { get; set; }
+        [Required(ErrorMessage = "Debes introducir un mensaje para continuar.")]
+        public string Message { get; set; }
 
         [Required(ErrorMessage = "Debes introducir un correo electrónico para continuar.")]
         [EmailAddress(ErrorMessage = "Debes introducir un correo elctrónico valido.")]

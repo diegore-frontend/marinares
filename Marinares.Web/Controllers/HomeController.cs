@@ -14,11 +14,6 @@ namespace Marinares.Web.Controllers
 			return View();
 		}
 
-		[Route("confirmar")]
-		public ActionResult Contact()
-		{
-			return View();
-		}
 
 		[HttpPost, Route("SendMessage")]
 		public JsonResult SendMessage(ContactViewModel model)
@@ -32,7 +27,7 @@ namespace Marinares.Web.Controllers
 				Email.Send(new EmailData()
 				{
 					Subcaject = "Confirmación",
-					Body = string.Concat(model.Name, model.FirstName, model.Phone),
+					Body = string.Concat(model.Name, "-", model.Message, "-", model.Phone),
 					To = new List<string>()
 					{
 						 model.Email

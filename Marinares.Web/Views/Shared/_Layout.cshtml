@@ -1,17 +1,24 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app.marinares">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Diegore Gtz">
+
+    <title>Inicio | Esto es una boda de barrio</title>
+
+    <!-- Css -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Special+Elite" rel="stylesheet">
+    <link rel="stylesheet" href=@Url.Content("~/Content/css/marinares-master.css")>
+
     <script type="text/javascript">
         var url = '@Url.Content("~")'
     </script>
 
-	<link href="~/Content/css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/sweetalert2.min.css" rel="stylesheet" />
 </head>
-<body>    
+<body class="ap" ontouchstart="">
     <div class="container body-content">
         @RenderBody()
     </div>
@@ -21,7 +28,7 @@
                     "~/marinares/ng-modules",
                     "~/marinares/ng-shared")
 
-	<script src="~/Scripts/sweetalert2.min.js"></script>
+    <script src="~/Scripts/sweetalert2.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

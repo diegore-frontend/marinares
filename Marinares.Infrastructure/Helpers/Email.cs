@@ -1,5 +1,6 @@
 ﻿using System.Net.Mail;
 using Marinares.Data.Shared;
+using System.Net;
 
 namespace Marinares.Infrastructure.Helpers
 {
@@ -7,27 +8,30 @@ namespace Marinares.Infrastructure.Helpers
     {
         public static void Send(EmailData email)
         {
-            var mailFrom = new MailAddress(email.From, email.DisplayName);
-
-            var smtpClient = new SmtpClient(email.Host, email.Port)
+            SmtpClient smtpClient = new SmtpClient(email.Host, email.Port);
+            MailMessage mailMessage = new MailMessage()
             {
-                Credentials = new System.Net.NetworkCredential(email.Credentiales.UserName, email.Credentiales.Password),
-                EnableSsl = true
+                From = new MailAddress(email.From, email.DisplayName)
             };
 
-            var mailMessage = new MailMessage
+            foreach (var itemTo in email.To)
             {
-                From = mailFrom,
-                Subject = email.Subcaject,
-                Body = email.Body,
-                IsBodyHtml = true
-            };
-
-            foreach (var to in email.To)
-            {
-                mailMessage.To.Add(to);
+                mailMessage.To.Add(itemTo);
             }
 
+            mailMessage.Subject = email.Subcaject;
+            mailMessage.Body = email.Body;
+            mailMessage.IsBodyHtml = true;
+
+            if (!string.IsNullOrEmpty(email.Credentiales.UserName) && !string.IsNullOrEmpty(email.Credentiales.Password))
+            {
+                smtpClient.Credentials = new NetworkCredential(email.Credentiales.UserName, email.Credentiales.Password);
+                smtpClient.EnableSsl = true;                
+            }
+            else
+            {
+                smtpClient.UseDefaultCredentials = true;
+            }
             smtpClient.Send(mailMessage);
         }
     }
