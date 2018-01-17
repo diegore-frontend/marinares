@@ -8,6 +8,9 @@
 		&-logo
 			&-nav
 				padding: 1em;
+				
+				+above(1100px)
+					padding: 2.2em 6em 3em 1em
 		
 		&-navigation
 			position: relative
@@ -19,7 +22,8 @@
 					font-size: 2.3em;
 					height: 3em;
 					transition: .20s all
-					transition-timing-function: ease-in		
+					transition-timing-function: ease-in
+					pointer-events: none;	
 
 					&-link
 						background-position: 0 -49em
@@ -51,6 +55,12 @@
 			display: block
 			margin: auto
 			font-size: .3em
+		
+		+above(1100px)
+			padding: .2em;
+			position: absolute;
+			width: 100%;
+			z-index: -1;
 				
 	// Instagram
 	// &-instagram
@@ -70,6 +80,7 @@
 		
 		+above(1000px)
 			width: 24em
+			padding: 7.3em 1em 1em
 		
 		&--is-visible
 			left: 0
@@ -117,7 +128,7 @@
 			display block
 			
 			+above(1000px)
-				padding: 2.6em 0
+				padding: 2em 0
 		
 		// &-ac
 		// 	width: 100%

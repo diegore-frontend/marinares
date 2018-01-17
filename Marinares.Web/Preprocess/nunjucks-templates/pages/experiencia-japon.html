@@ -3,29 +3,133 @@
 {% set page = 'Japon' %}
 
 {% block content %}
+				<link rel="stylesheet" href="/Content/css/marinares-owl.css">
 				<article class="ap-section ap-japan">
-					<header class="ap-jp-head">
-						<h2 class="ap-tt-sub">Experiencia Japón</h2>
-						<p class="ap-txt">
-							Debido a que llevamos viviendo juntos tres años, ya contamos con todo lo necesario para nuestro hogar. Así que puedes regalarnos una de las siguientes experiencias durante la “Luna de Miel” puedes hacerlo de la siguiente manera:
-						</p>
-					</header>
-					<section class="ap-panel ap-japan-info">
-						<ul class="ap-jp-options">
-							<li class="ap-jp-item">
-								<div class="ap-jp-card">
-									<figure class="ap-jp-fig">
-										<img src="" alt="" class="ap-jp-img">
-										<span class="ap-jp-prices"></span>
-									</figure>
-									<div class="ap-jp-info">
-										<h2 class="ap-tt-sub"></h2>
-										<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+					<div class="ap-panel--white">
+						<div class="ap-jp-characters">
+							<div class="ap-img-sp ap-img-sp--marin"></div>
+							<div class="ap-img-sp ap-img-sp--ares"></div>
+						</div>
+						<header class="ap-jp-head">
+							<h2 class="ap-tt-sub">- Experiencia Japón -</h2>
+							<p class="ap-txt">
+								Debido a que llevamos viviendo juntos tres años, ya contamos con todo lo necesario para nuestro hogar. Así que puedes regalarnos una de las siguientes experiencias durante la <strong>“Luna de Miel”</strong> puedes hacerlo de la siguiente manera:
+							</p>
+						</header>
+						<section class="ap-panel ap-japan-info">
+
+							<div class="ap-jp-gallery cf">
+								<div class="ap-jp-item">
+									<div class="ap-jp-card">
+										<figure class="ap-jp-fig">
+											<img src="../Content/img/japan/img-japan-airlines.jpg" class="ap-jp-img">
+											<span class="ap-jp-prices">
+												1 x $8,000
+											</span>
+										</figure>
+										<div class="ap-jp-info">
+											<h2 class="ap-tt-sub">
+												Abono para el Japan Rail Pass
+												<small class="ap-tt-sub--small">
+													Se necesitan 2 (Puedes abonar una parte)
+												</small>
+											</h2>
+											<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+										</div>
 									</div>
 								</div>
-							</li>
-						</ul>
-					</section>
-				</article>
 
+								<div class="ap-jp-item">
+									<div class="ap-jp-card">
+										<figure class="ap-jp-fig">
+											<img src="../Content/img/japan/img-utahiro.jpg" class="ap-jp-img">
+											<span class="ap-jp-prices">
+												$2,000 Mxn
+											</span>
+										</figure>
+										<div class="ap-jp-info">
+											<h2 class="ap-tt-sub">
+												Noche de Karaoke Free Time en UtaHiroba
+											</h2>
+											<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+										</div>
+									</div>
+								</div>
+
+								<div class="ap-jp-item">
+									<div class="ap-jp-card">
+										<figure class="ap-jp-fig">
+											<img src="../Content/img/japan/img-mario-kart.jpg" class="ap-jp-img">
+											<span class="ap-jp-prices">
+												$3,000
+											</span>
+										</figure>
+										<div class="ap-jp-info">
+											<h2 class="ap-tt-sub">
+												Tour Mario Kart por Akihabara
+											</h2>
+											<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+										</div>
+									</div>
+								</div>
+
+								<div class="ap-jp-item ap-jp-item--break">
+									<div class="ap-jp-card">
+										<figure class="ap-jp-fig">
+											<img src="../Content/img/japan/img-robot-rest.jpg" class="ap-jp-img">
+											<span class="ap-jp-prices">
+												$3,000
+											</span>
+										</figure>
+										<div class="ap-jp-info">
+											<h2 class="ap-tt-sub">
+												Cena y espectáculo de peleas de Robot en:
+												<small class="ap-tt-sub--small">
+													Robot Restaurant en Kabukicho
+												</small>
+											</h2>
+											<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+										</div>
+									</div>
+								</div>
+
+								<div class="ap-jp-item">
+									<div class="ap-jp-card">
+										<figure class="ap-jp-fig">
+											<img src="../Content/img/japan/img-akihabara.jpg" class="ap-jp-img">
+											<span class="ap-jp-prices">
+												$1,300
+											</span>
+										</figure>
+										<div class="ap-jp-info">
+											<h2 class="ap-tt-sub">
+												Lunch Casual en Akihabara
+											</h2>
+											<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+										</div>
+									</div>
+								</div>
+
+								<div class="ap-jp-item">
+									<div class="ap-jp-card">
+										<figure class="ap-jp-fig">
+											<img src="../Content/img/japan/img-japan-airlines.jpg" class="ap-jp-img">
+											<span class="ap-jp-prices">
+												1 x $8,000
+											</span>
+										</figure>
+										<div class="ap-jp-info">
+											<h2 class="ap-tt-sub">
+												Cena en Alcatraz E. R. en Shibuya
+											</h2>
+											<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+										</div>
+									</div>
+								</div>
+							</div>
+							<span id="bp_mobile" class="bp_checking"></span>
+						</section>
+					</div>
+				</article>
+				{% include "partials/footer.html" %}
 {% endblock content %}

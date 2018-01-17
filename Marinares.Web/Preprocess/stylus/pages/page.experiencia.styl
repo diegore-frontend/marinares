@@ -1,0 +1,170 @@
+.ap
+	&-japan
+		padding-top: 9.6em
+		background-size: cover
+		padding-bottom: 1em
+		
+	&-jp
+		&-head
+			background-color: #FFF
+			padding: 1em
+			text-align: center
+			position: relative
+			width: 90%
+			margin: 10em auto 0
+			
+			+above(760px)
+				margin-bottom: 1em
+			
+			+above(1100px)
+				margin-top: 12em
+			
+			.ap-tt-sub
+				font-weight: bolder
+				font-size: 1.6em
+				margin-bottom: 0.4em
+		
+		&-characters
+			font-size: 0.4em;
+			position: relative;
+			
+			+above(1100px)
+				font-size: .6em
+
+			.ap-img-sp
+				margin-top: -22em;
+				position: absolute;
+				top: 50%;
+				
+				&--marin
+					left: 50%;
+					margin-left: -19.4em;
+					+above(1100px)
+						height: 28em
+				
+				&--ares
+					right: 50%;
+					margin-right: -19.4em;
+					+above(1100px)
+						height: 28em
+					
+		&-prices
+			position: absolute;
+			background-color: $red
+			font-size: 1.2em;
+			display: inline-block;
+			padding: .6em;
+			color: #FFF
+			top: .4em
+			
+			+above(760px)
+				font-size: 1em;				
+		
+		&-info			
+			width: 90%;
+			margin: auto;
+			
+			+above(760px)
+				width: 100%
+				
+			.ap
+				&-tt-sub
+					background-color: #fff;
+					font-size: 1.4em;
+					padding: 0.6em;
+					height: 5em;
+					
+					&--small
+						display: block
+						font-size: 0.7em
+				
+				&-btn
+					&--sb
+						border-radius: 0 0 .6em .6em;
+						max-width: 100%;
+						font-size: 1.4em;
+		
+		// Card
+		&-item
+			margin-bottom: 1em 
+			
+			+above(760px)
+				float: left
+				width 32%
+				margin-left: 2%
+				
+				&:first-child
+					margin: 0
+				
+			&--break
+				+above(760px)
+					margin-left: 0
+
+		&-fig
+			position: relative
+			
+			img
+				width: 100%
+		
+		&-detail
+			background-color: #FFF
+			padding: 1em
+			position: relative
+			
+			.ap-jp
+				&-fig
+					+above(760px)
+						float: left
+						width: 32%
+				&-info
+					+above(760px)
+						float: left
+						width: 66%
+						margin-left: 2%
+						
+					.ap
+						&-tt-sub
+							+above(760px)
+								height: inherit
+						
+						&-btn
+							&--sb
+								border-radius: 1em
+								max-width: 16em
+								margin: auto
+								
+								+above(760px)
+									margin: 0
+	
+	&-panel
+		&--white
+			max-width: 38em
+			margin: auto
+			
+			+above(760px)
+				max-width: 96%
+			
+			+above(1100px)
+				max-width: 74em
+
+	&-paypal
+		position: relative;
+		text-align: center;
+		padding: .6em 0;
+		
+		+above(760px)
+			text-align: left
+			padding-left: .6em
+		
+		&-img
+			width: 3em
+
+.owl-nav
+	display: none
+ 	
+.bp_checking
+	display: none;
+
+@media only screen and (max-width: 767px)
+	#bp_mobile 
+		display: block;

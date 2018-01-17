@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% set title = 'Experiencia en Japón' %}
+{% set page = 'Japon' %}
+
+{% block content %}
+				<link rel="stylesheet" href="/Content/css/marinares-owl.css">
+				<article class="ap-section ap-japan">
+					<div class="ap-panel--white">
+						<div class="ap-jp-characters">
+							<div class="ap-img-sp ap-img-sp--marin"></div>
+							<div class="ap-img-sp ap-img-sp--ares"></div>
+						</div>
+						<header class="ap-jp-head">
+							<h2 class="ap-tt-sub">- Experiencia Japón -</h2>
+							<p class="ap-txt">Regalen algo a la pareja a través de una cuenta Pay Pal. ¿No tienen? Usen la tarjeta de crédito de su preferencia y saquen una... Es muy rápido.</p>
+						</header>
+						<section class="ap-panel ap-japan-info">
+							<div class="ap-jp-detail cf">
+								
+								<figure class="ap-jp-fig">
+									<img src="../Content/img/japan/img-utahiro.jpg" class="ap-jp-img">
+									<span class="ap-jp-prices">
+										$2,000 Mxn
+									</span>
+								</figure>
+								<div class="ap-jp-info">
+									<h2 class="ap-tt-sub">
+										Noche de Karaoke Free Time en UtaHiroba
+									</h2>
+									<input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
+									<div class="ap-paypal">
+										<p class="ap-txt">Esta compra es segura con: <img src="../Content/img/img-paypal.png" class="ap-paypal-img"></img> </p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</article>
+				{% include "partials/footer.html" %}
+{% endblock content %}

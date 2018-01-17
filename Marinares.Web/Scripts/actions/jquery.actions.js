@@ -15,23 +15,6 @@ $(function(){
 		returnMenu()
 	});
 
-	$('#ap-nav').onePageNav({
-		currentClass: 'ap-nav-item--active',
-		changeHash: false,
-		scrollSpeed: 750,
-		scrollThreshold: 0.5,
-		filter: '',
-		easing: 'swing',
-		begin: function() {
-		},
-		end: function() {
-			//I get fired when the animation is ending
-		},
-		scrollChange: function($currentListItem) {
-			$heade.toggleClass('ap-header--slim');
-		}
-	});
-
 	function returnMenu() {
 		$mnBtn.toggleClass('ap-nav-icon--active');
 		$mnNav.toggleClass('ap-nav--is-visible');
@@ -40,6 +23,14 @@ $(function(){
 	if ($('.ap-cp').is(':visible')) {
 		setTimeout(function(){
 			$heade.toggleClass('ap-header--ribbon')
+			$('#ap-nav').onePageNav({
+				currentClass: 'ap-nav-item--active',
+				changeHash: false,
+				scrollSpeed: 750,
+				scrollThreshold: 0.5,
+				filter: '',
+				easing: 'swing'
+			});
 			parallaxingCouple();
 		},10);
 	}
@@ -51,5 +42,12 @@ $(function(){
 		$('.ap-img-sp--marin').plaxify({"xRange":-10,"yRange":0})
 		$('.ap-img-sp--ares').plaxify({"xRange":-10,"yRange":0, "invert":true})
 		$.plax.enable()
+	}
+
+	// Japan
+	if ($('.ap-jp-gallery').is(':visible')) {
+		setTimeout(function(){
+			sliderGallery.init();
+		},10);
 	}
 });
