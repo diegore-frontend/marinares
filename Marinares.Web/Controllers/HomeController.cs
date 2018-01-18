@@ -35,7 +35,7 @@ namespace Marinares.Web.Controllers
 				{
 					return InvalidData();
 				}
-				Email.Send(new EmailData()
+				Email.Send(new EmailData() 
 				{
 					Subcaject = "Asistencia",
 					Body = string.Concat(model.Name, "-", model.Message, "-", model.Phone),

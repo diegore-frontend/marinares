@@ -27,7 +27,9 @@
                         @Model.Title
                     </h2>
                     <form method="post" action="@Url.Action("Payment","Present")">
+                        <input type="text" name="Email" />
                         <input type="hidden" value="@Model.Key" name="Key" />
+                        <input type="hidden" value="@Model.Title" name="Name" />
                         <input type="submit" value="Comprar" class="ap-btn ap-btn--sb">
                     </form>
                     <div class="ap-paypal">
