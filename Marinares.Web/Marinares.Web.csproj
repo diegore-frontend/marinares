@@ -192,10 +192,8 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\marinares-master.css" />
     <Content Include="Content\css\sweetalert2.min.css" />
-    <Content Include="Content\img\img-cat.png" />
     <Content Include="Content\img\img-donde.jpg" />
     <Content Include="Content\img\img-dress-code.jpg" />
-    <Content Include="Content\img\img-intinerario.jpg" />
     <Content Include="Content\img\img-japon.jpg" />
     <Content Include="Content\img\img-site-spritesheet.png" />
     <Content Include="Content\img\img-spark.png" />
@@ -273,9 +271,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -285,12 +281,13 @@
     <Content Include="Content\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\css\bootstrap.css.map" />
     <Content Include="Content\css\bootstrap.min.css.map" />
-    <Content Include="Content\json\presents.json" />
+    <Content Include="App_Data\json\presents.json" />
     <None Include="packages.config" />
     <Content Include="Views\Present\Present.cshtml" />
     <Content Include="Views\Present\Details.cshtml" />
     <Content Include="Views\Home\Wear.cshtml" />
     <Content Include="Views\Home\Itinerario.cshtml" />
+    <None Include="Properties\PublishProfiles\eguzman.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marinares.Data\Marinares.Data.csproj">

@@ -7,7 +7,8 @@
 
 	ContactController.$inject = ['ContactService'];
 	function ContactController(ContactService) {
-		var vm = this;
+	    var vm = this;
+	    vm.contact = {};
 
 		vm.sendMessage = sendMessage;
 
@@ -15,6 +16,9 @@
 			if ($('form').valid()) {
 				ContactService.sendMessage({ model: contact })
                 .then(function (response) {
+                    if (response.Status === 'success') {
+                        vm.contact = {};
+                    }
                 	swal({
                 		type: response.Status,
                 		text: response.Content
