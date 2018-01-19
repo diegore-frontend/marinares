@@ -17,7 +17,7 @@ namespace Marinares.Tests
 				Body = "test",
 				To = new List<string>()
 				{
-					"sistemasguzman@gmial.com"
+					"sistemasguzman@gmail.com"
 				},
 				Credentiales = new Credentiales()
 				{
