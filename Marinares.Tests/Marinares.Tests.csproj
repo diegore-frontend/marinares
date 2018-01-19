@@ -107,9 +107,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Marinares.Web\Marinares.Web.csproj">
-      <Project>{F5F19935-D91C-4BEE-B28C-772697172B17}</Project>
-      <Name>Marinares.Web</Name>
+    <ProjectReference Include="..\Marinares.Data\Marinares.Data.csproj">
+      <Project>{cadb0fd5-52d2-47a8-88ea-56378698b38d}</Project>
+      <Name>Marinares.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marinares.Infrastructure\Marinares.Infrastructure.csproj">
+      <Project>{eccf030d-e33f-43f8-93fb-b7321d82e1c5}</Project>
+      <Name>Marinares.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

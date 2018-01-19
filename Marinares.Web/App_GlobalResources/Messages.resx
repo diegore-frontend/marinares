@@ -123,8 +123,11 @@
   <data name="InvalidData" xml:space="preserve">
     <value>Los datos enviados no son validos.</value>
   </data>
+  <data name="MailConfirmation" xml:space="preserve">
+    <value>Recibirás un correo de confirmación.</value>
+  </data>
   <data name="PaymentSuccess" xml:space="preserve">
-    <value>La compra se realizó correctamente. Recibirás un correo de confirmación.</value>
+    <value>La compra se realizó correctamente.</value>
   </data>
   <data name="PaymentWrong" xml:space="preserve">
     <value>No es posible procesar la compra.</value>

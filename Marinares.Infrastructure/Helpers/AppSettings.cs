@@ -21,6 +21,8 @@ namespace Marinares.Infrastructure.Helpers
         public static string PayPalCallbackFail => GetValue<string>("PayPal.Callback.Fail");
         public static string PayPalType => GetValue<string>("PayPal.Type");
 	    public static string RoutePresent => GetValue<string>("Route.Present");
+	    public static string RouteMailConfirmationPayment => GetValue<string>("Route.Mail.Confirmation.Payment");
+	    public static string RouteMailConfirmation => GetValue<string>("Route.Mail.Confirmation");
 
 	    private static TValue GetValue<TValue>(string appSettingsKey)
         {
