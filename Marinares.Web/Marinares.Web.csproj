@@ -241,6 +241,12 @@
     <Content Include="fonts\ms-icons.ttf" />
     <Content Include="fonts\ms-icons.woff" />
     <Content Include="fonts\selection.json" />
+    <Content Include="html\como-vestir.html" />
+    <Content Include="html\experiencia-japon-detalle.html" />
+    <Content Include="html\experiencia-japon.html" />
+    <Content Include="html\index.html" />
+    <Content Include="html\intinerario.html" />
+    <Content Include="html\page.elements.html" />
     <Content Include="mailing\img\img-01.jpg" />
     <Content Include="mailing\img\img-paypal.png" />
     <Content Include="mailing\mail-confirmacion-paypal.html" />
@@ -285,6 +291,7 @@
     <Content Include="Views\Present\Details.cshtml" />
     <Content Include="Views\Home\Wear.cshtml" />
     <Content Include="Views\Home\Itinerario.cshtml" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\eguzman.pubxml" />
   </ItemGroup>
   <ItemGroup>

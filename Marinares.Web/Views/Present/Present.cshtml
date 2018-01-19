@@ -3,6 +3,8 @@
     ViewBag.Title = " | Mesa de regalos";
 }
 <link rel="stylesheet" href=@Url.Content("~/Content/css/marinares-owl.css")>
+
+
 <article class="ap-section ap-japan">
     <div class="ap-panel--white">
         <div class="ap-jp-characters">
@@ -12,15 +14,18 @@
         <header class="ap-jp-head">
             <h2 class="ap-tt-sub">- Experiencia Japón -</h2>
             <p class="ap-txt">
-                Debido a que llevamos viviendo juntos tres años, ya contamos con todo lo necesario para nuestro hogar. Así que puedes regalarnos una de las siguientes experiencias durante la <strong>“Luna de Miel”</strong> puedes hacerlo de la siguiente manera:
+                Debido a que llevamos viviendo juntos tres años, ya contamos con todo lo necesario para nuestro hogar. Así que puedes regalarnos una de las siguientes experiencias durante la <strong>“Luna de Miel”</strong> puedes hacerlo seleccionando una de las opciones en la lista y comprar con <strong>PayPal.</strong>
             </p>
         </header>
         <section class="ap-panel ap-japan-info">
-
             <div class="ap-jp-gallery cf">
+                @{
+                    var index = 0;
+                    var elements = new[] { 3, 6, 9, 12 };
+                }
                 @foreach (var item in Model)
                 {
-                    <div class="ap-jp-item">
+                    <div class="ap-jp-item @(elements.Contains(index)? "ap-jp-item--break":"") ">
                         <div class="ap-jp-card">
                             <figure class="ap-jp-fig">
                                 <img src=@Url.Content("~/Content/img/japan/" + item.Image) class="ap-jp-img">
@@ -40,11 +45,13 @@
                                 <input type="submit" value="Comprar" class="ap-btn ap-btn--sb" onclick="location.href = '@Url.Action("Details","Present",new {key = item.Key })' ">
                             </div>
                         </div>
-                    </div>}
+                    </div>
+                    @(index++)
+                }
             </div>
             <span id="bp_mobile" class="bp_checking"></span>
         </section>
-    </div>
+  </div>
 </article>
 @section scripts
 {
