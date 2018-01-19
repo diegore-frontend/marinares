@@ -1,3 +1,10 @@
+.ha
+	&-header
+		background-color: #FFF
+		position: fixed
+		width: 100%
+		z-index: 20
+		
 .ap
 	&-header
 		background-color: #FFF
@@ -35,9 +42,7 @@
 				.ap-brand
 					font-size: 1.4em;
 					height: 4.4em;		
-			
 
-	
 	&-brand
 		display: block;
 		width: 14em;
@@ -61,11 +66,7 @@
 			position: absolute;
 			width: 100%;
 			z-index: -1;
-				
-	// Instagram
-	// &-instagram
-	// 	width: 100%
-	
+					
 	&-nav
 		background-color: #FFF
 		position: fixed;
@@ -76,7 +77,25 @@
 		left: -100%
 		z-index: 1
 		transition: .30s linear
-		transition-timing-function: ease-in;
+		transition-timing-function: ease-in-out
+		
+		&:before
+			+above(1000px)
+				background: url('../img/img-cat-menu-desk.png')
+				background-size: 100% auto;
+				bottom: -4em;
+				content: '';
+				font-size: 2.8em;
+				height: 4em;
+				margin-right: -3em;
+				position: absolute;
+				right: 50%;
+				user-select: none;
+				width: 4em;
+				z-index: 4;
+				transition: .70s all
+				transition-timing-function: ease-in-out
+				transition-delay: 1.2s
 		
 		+above(1000px)
 			width: 24em
@@ -84,6 +103,12 @@
 		
 		&--is-visible
 			left: 0
+			+above(1000px)
+				z-index: 3
+			
+			&:before
+				+above(1000px)
+					bottom: 0
 			
 			.ap-nav-item
 				animation: .6s fadeInRight both
@@ -102,6 +127,10 @@
 				
 				&:nth-child(6)
 					animation-delay: 1s
+			
+			//
+			+above(1000px)
+				box-shadow: 1px 1px 100px rgba(0,0,0,0.1)
 		
 		&-list
 			height: 100%
@@ -124,8 +153,9 @@
 				
 		&-link
 			color: $base
-			padding: 7.8% 0
+			padding: 2.6em 0
 			display block
+			
 			
 			+above(1000px)
 				padding: 2em 0
@@ -136,6 +166,11 @@
 		&-social
 			color: $base
 			font-size: 1.4em;
+	
+	&-layout
+		transition: .20s all
+		&--nav-open
+			opacity: .2
 
 // Hamburguer Menu
 .ap-nav-icon

@@ -2,7 +2,8 @@ $(function(){
 	// Variables
 	var $mnBtn = $('.ap-nav-icon'),
 			$mnNav = $('.ap-nav'),
-			$heade = $('.ap-header');
+			$heade = $('.ap-header'),
+			$layot = $('.ap-layout');
 
 
 	// Hamburguer menu
@@ -18,6 +19,7 @@ $(function(){
 	function returnMenu() {
 		$mnBtn.toggleClass('ap-nav-icon--active');
 		$mnNav.toggleClass('ap-nav--is-visible');
+		$layot.toggleClass('ap-layout--nav-open');
 	}
 
 	if ($('.ap-cp').is(':visible')) {
@@ -50,4 +52,21 @@ $(function(){
 			sliderGallery.init();
 		},10);
 	}
+
+	// NAvigation
+	var $head = $( '#ha-header' );
+	$( '.ha-waypoint' ).each( function(i) {
+		var $el = $( this ),
+			animClassDown = $el.data( 'animateDown' ),
+			animClassUp = $el.data( 'animateUp' );
+
+		$el.waypoint( function( direction ) {
+			if( direction === 'down' && animClassDown ) {
+				$head.attr('class', 'ha-header ' + animClassDown);
+			}
+			else if( direction === 'up' && animClassUp ){
+				$head.attr('class', 'ha-header ' + animClassUp);
+			}
+		}, { offset: '100%' } );
+	} );
 });
