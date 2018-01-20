@@ -12,7 +12,7 @@
     "Title": "Noche de Karaoke Free Time en UtaHiroba",
     "Copy": "",
     "Image": "img-utahiro.jpg",
-    "Price": "$2,000 Mxn",
+    "Price": "$2,000 Mxn", 
     "Total": 2000
   },
   {
@@ -24,7 +24,7 @@
     "Total": 3000
   },
   {
-    "Key": "cena-y-espectáculo-de-peleas-de-robot",
+    "Key": "cena-y-espectaculo-de-peleas-de-robot",
     "Title": "Cena y espectáculo de peleas de Robot en:",
     "Copy": "Robot Restaurant en Kabukicho",
     "Image": "img-robot-rest.jpg",
@@ -56,7 +56,7 @@
     "Total": 6000
   },
   {
-    "Key": "picnic-en-el-parque-ueno-para-ver-los-sakuras.",
+    "Key": "picnic-en-el-parque-ueno-para-ver-los-sakuras",
     "Title": "Picnic en el Parque Ueno para ver los Sakuras.",
     "Copy": "",
     "Image": "img-ueno-sakura.jpg",
