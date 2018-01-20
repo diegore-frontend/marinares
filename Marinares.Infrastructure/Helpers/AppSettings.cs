@@ -24,7 +24,12 @@ namespace Marinares.Infrastructure.Helpers
 	    public static string RouteMailConfirmationPayment => GetValue<string>("Route.Mail.Confirmation.Payment");
 	    public static string RouteMailConfirmation => GetValue<string>("Route.Mail.Confirmation");
 
-	    private static TValue GetValue<TValue>(string appSettingsKey)
+        public static bool IsPaymentTest => GetValue<bool>("Is.Payment.Test");
+        public static float PaymentAmount => GetValue<float>("Payment.Amount");
+
+
+
+        private static TValue GetValue<TValue>(string appSettingsKey)
         {
             try
             {

@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = " | Itinerario";
 }
-<article class="ap-section ap-it ap-pn-sc">
+<article class="ap-section ap-section--itn ap-it ap-pn-sc">
     <div class="ap-panel--white">
         <div class="ap-jp-characters">
             <div class="ap-img-sp ap-img-sp--marin"></div>
@@ -19,10 +19,51 @@
         </header>
         <section class="ap-dc">
             <div class="ap-dc-palete cf">
-                <h2 class="ap-tt-sub">Gama sugerida de colores</h2>
                 <img class="ap-dc-img" src=@Url.Content("~/Content/img/img-palette.png")>
             </div>
         </section>
-        <img src=@Url.Content("~/Content/img/img-ramo.png") alt="" class="ap-dc-ramo">
+    </div>
+
+    <div class="ap-panel--white">
+        <div class="ap-jp-head ap-jp-head--info">
+            <ul class="ap-timesheet cf">
+                <li class="ap-tms-item">
+                    <p class="ap-txt--cursive">
+                        Ceremonia -
+                    </p>
+                    <div class="cf">
+                        <p class="ap-txt--time f-left">5pm.</p>
+                        <p class="ap-txt--info f-right">
+                            Ceremonia espiritual no denominativa + boda civil.
+                        </p>
+                    </div>
+                </li>
+                <li class="ap-tms-item">
+                    <p class="ap-txt--cursive">
+                        - Procesión
+                    </p>
+                    <div class="cf">
+                        <p class="ap-txt--time f-left">6pm.</p>
+                        <p class="ap-txt--info f-right">
+                            Procesión todos juntos al ritmo de banda de viento.
+                        </p>
+                    </div>
+                </li>
+                <li class="ap-tms-item">
+                    <p class="ap-txt--cursive">
+                        ¡Se abren las puertas!
+                    </p>
+                    <div class="cf">
+                        <p class="ap-txt--time f-left">7pm.</p>
+                        <p class="ap-txt--info f-right">
+                            Se abren las puertas de <strong>#marinares.</strong> Cena, música, y buena onda para todos.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <figure class="ap-img-cake">
+                <img src=@Url.Content("~/Content/img/img-pastel.png") alt="Pastel">
+            </figure>
+        </div>
     </div>
 </article>
