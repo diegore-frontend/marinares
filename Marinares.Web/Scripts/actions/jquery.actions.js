@@ -1,9 +1,9 @@
 $(function(){
 	// Variables
 	var $mnBtn = $('.ap-nav-icon'),
-			$mnNav = $('.ap-nav'),
-			$heade = $('.ap-header'),
-			$layot = $('.ap-layout');
+		$mnNav = $('.ap-nav'),
+		$heade = $('.ap-header'),
+		$layot = $('.ap-layout');
 
 
 	// Hamburguer menu
@@ -22,7 +22,16 @@ $(function(){
 		$layot.toggleClass('ap-layout--nav-open');
 	}
 
+	function gotoconfirm() {
+  	$('.ap-btn--confirm').on('click', function(){
+  		$('.ap-nav-link-confirm').trigger( "click" );
+  		returnMenu();
+  	});
+	}
+
 	if ($('.ap-cp').is(':visible')) {
+		gotoconfirm();
+
 		setTimeout(function(){
 			$heade.toggleClass('ap-header--ribbon')
 			$('#ap-nav').onePageNav({
@@ -35,6 +44,19 @@ $(function(){
 			});
 			parallaxingCouple();
 		},10);
+
+		// Navigation
+		var waypoints = $('#ap-grid-menu').waypoint(function(direction) {
+		  $heade.toggleClass('ap-header--ribbon-small');
+		  $('.ap-grid-menu').toggleClass('ap-grid-menu--is-visible')
+		}, {
+		  offset: '25%'
+		})
+		var waypoints = $('#ap-class').waypoint(function(direction) {
+		  $('.ap-class').toggleClass('ap-class--is-visible')
+		}, {
+		  offset: '25%'
+		})
 	}
 	
 	// Parallaxing couple
@@ -53,20 +75,8 @@ $(function(){
 		},10);
 	}
 
-	// NAvigation
-	var $head = $( '#ha-header' );
-	$( '.ha-waypoint' ).each( function(i) {
-		var $el = $( this ),
-			animClassDown = $el.data( 'animateDown' ),
-			animClassUp = $el.data( 'animateUp' );
-
-		$el.waypoint( function( direction ) {
-			if( direction === 'down' && animClassDown ) {
-				$head.attr('class', 'ha-header ' + animClassDown);
-			}
-			else if( direction === 'up' && animClassUp ){
-				$head.attr('class', 'ha-header ' + animClassUp);
-			}
-		}, { offset: '100%' } );
-	} );
+	// Sections
+	setTimeout(function(){
+		$('.ap-section').addClass('ap-section--ready');
+	},1000);
 });

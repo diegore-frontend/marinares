@@ -3,6 +3,9 @@
 		height: 100%
 		position: relative
 		
+		+below(660px)
+			padding-top: 4em
+		
 		&:before
 			background: linear-gradient(top, rgba(#fff7eb, 1), rgba(255, 255, 255, 0));
 			content: ''
@@ -23,6 +26,8 @@
 			&-img-sp
 				font-size: .5em
 				margin: auto
+				opacity: 0
+				transition: .30s all
 				
 				+above(1480px)
 					font-size: 0.8em
@@ -34,6 +39,20 @@
 				text-align: center
 				margin-bottom: 1em
 				font-weight: bold
+				opacity: 0
+				transition: .30s all
+			
+		// Animated
+		&--is-visible
+			.ap
+				&-img-sp--couple-back, &-txt--quote, &-uber-rec
+					animation: 1s fadeInUp both
+				
+				&-txt--quote
+					animation-delay: .4s
+				
+				&-uber-rec
+					animation-delay: .6s
 	
 	&-uber
 		display inline-block
@@ -42,10 +61,11 @@
 		&-rec
 			max-width: 300px
 			margin: auto
+			opacity: 
 			
 			.ap-txt--quote
 				display: inline-block;
 				width: calc(100% - 8em);
 				text-align: left;
 				vertical-align: middle
-		
+				

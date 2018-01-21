@@ -7,6 +7,17 @@
 	width: 100%
 	border-radius: 1em
 	padding: .3em
+	transition: .30s all
+	
+	&:active, &:focus
+		&:hover
+			background-color: #e48399
+			color: #FFF		
+	
+	+above(1100px)
+		&:hover
+			background-color: #e48399
+			color: #FFF		
 	
 	&--sb
 		background-color: $red

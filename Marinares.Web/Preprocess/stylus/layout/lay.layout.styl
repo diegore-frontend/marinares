@@ -24,6 +24,20 @@
 		border-width: 1em 1em 0 1em
 		border-style: solid
 		border-color: #FFF
+		transition: .40s all
+		opacity: 0
+		
+		&--ready
+			opacity: 1
+			
+			.ap-img-sp
+				animation: 1s fadeInUp both
+				
+				&--marin
+					animation-delay: .2s
+				&--ares
+					animation-delay: .4s
+				
 	
 	&-pn-sc
 		padding-top: 9.6em
