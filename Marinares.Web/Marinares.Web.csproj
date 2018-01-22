@@ -181,6 +181,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apple-touch-icon-114x114.png" />
+    <Content Include="apple-touch-icon-120x120.png" />
+    <Content Include="apple-touch-icon-144x144.png" />
+    <Content Include="apple-touch-icon-152x152.png" />
+    <Content Include="apple-touch-icon-180x180.png" />
+    <Content Include="apple-touch-icon-57x57.png" />
+    <Content Include="apple-touch-icon-72x72.png" />
+    <Content Include="apple-touch-icon-76x76.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="app\app.module.js" />
     <Content Include="app\contact\contact.service.js" />
     <Content Include="app\contact\contact.controller.js" />
@@ -248,14 +257,6 @@
     <Content Include="fonts\ms-icons.ttf" />
     <Content Include="fonts\ms-icons.woff" />
     <Content Include="fonts\selection.json" />
-    <Content Include="html\como-vestir.html" />
-    <Content Include="html\donde-hospedarse.html" />
-    <Content Include="html\donde.html" />
-    <Content Include="html\experiencia-japon-detalle.html" />
-    <Content Include="html\experiencia-japon.html" />
-    <Content Include="html\index.html" />
-    <Content Include="html\intinerario.html" />
-    <Content Include="html\page.elements.html" />
     <Content Include="mailing\img\img-01.jpg" />
     <Content Include="mailing\img\img-paypal.png" />
     <Content Include="mailing\mail-confirmacion-asistencia.html" />
