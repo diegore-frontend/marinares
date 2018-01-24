@@ -148,6 +148,46 @@
 								+above(760px)
 									margin: 0
 									font-size: .8em
+		
+
+		// Gallery controls
+		&-gallery
+			position: relative
+			
+			.owl
+				&-nav
+					+below(600px)
+						display: block
+
+				&-prev, &-next
+					background-color: $red
+					color: #FFF
+					font-size: 2em
+					height: 3em
+					position: absolute
+					width: 1em
+					top: 50%
+					margin-top: -3.2em
+					text-indent: -999px
+					line-height: 2.8em
+					
+					&:before 
+						font-family: 'ms-icons' !important
+						text-indent 0
+						position: absolute
+						left: 50%
+						margin-left: -.2em
+				
+				&-prev
+					left: 0
+					&:before
+						content: "\e911";
+			
+				&-next
+					right: 0
+					&:before
+						content: "\e90f";
+					
 	
 	&-panel
 		&--white

@@ -75,6 +75,12 @@ $(function(){
 		},10);
 	}
 
+
+	$('.ap-woman-carou').bxSlider();
+
+	$('.ap-man-carou').bxSlider();
+
+
 	// Sections
 	setTimeout(function(){
 		$('.ap-section').addClass('ap-section--ready');
