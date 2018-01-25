@@ -17,6 +17,7 @@ namespace Marinares.Web
             bundles.Add(new ScriptBundle("~/marinares/shared").Include(
                 "~/Scripts/jquery.vendors.js",
                 "~/Scripts/actions/jquery.actions.js",
+								"~/Scripts/jquery.a.swiper.js",
                 "~/Scripts/site.js"));
 
             bundles.Add(new ScriptBundle("~/marinares/ng-contact").Include(

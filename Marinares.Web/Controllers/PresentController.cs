@@ -27,7 +27,7 @@ namespace Marinares.Web.Controllers
             _payPalConfiguration.Add("mode", AppSettings.PayPalType.ToLower());
 
             _presents = PresentHelper.Get(
-                string.Concat(AppDomain.CurrentDomain.BaseDirectory, "/app_data/json/presents.json"));
+                string.Concat(AppDomain.CurrentDomain.BaseDirectory, "/app_data/json/", AppSettings.RoutePresent));
         }
 
         [Route("mesa-de-regalos"), HttpGet]
