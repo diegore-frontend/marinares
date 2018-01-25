@@ -26,7 +26,7 @@ namespace Marinares.Infrastructure.Helpers
             if (!string.IsNullOrEmpty(email.Credentiales.UserName) && !string.IsNullOrEmpty(email.Credentiales.Password))
             {
                 smtpClient.Credentials = new NetworkCredential(email.Credentiales.UserName, email.Credentiales.Password);
-                smtpClient.EnableSsl = true;
+                //smtpClient.EnableSsl = true;
 
             }
             else
