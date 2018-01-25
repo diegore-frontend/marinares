@@ -56,6 +56,10 @@ namespace Marinares.Web.Controllers
                 if (AppSettings.IsPaymentTest)
                 {
                     model.Price = AppSettings.PaymentAmount;
+								}
+                else
+                {
+	                model.Price = element.Total;
                 }
 
                 if (model.Price > 0)
