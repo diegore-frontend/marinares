@@ -1,4 +1,6 @@
-﻿using System.Net.Mail;
+﻿using System;
+using System.Configuration;
+using System.Net.Mail;
 using Marinares.Data.Shared;
 using System.Net;
 
@@ -17,6 +19,12 @@ namespace Marinares.Infrastructure.Helpers
             foreach (var itemTo in email.To)
             {
                 mailMessage.To.Add(itemTo);
+            }
+
+            foreach (var bcc in ConfigurationManager.AppSettings["Email.Bcc"].Split(new[] { ',' }, 
+                StringSplitOptions.RemoveEmptyEntries))
+            {
+                mailMessage.Bcc.Add(bcc);
             }
 
             mailMessage.Subject = email.Subcaject;
